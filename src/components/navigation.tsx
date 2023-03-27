@@ -3,10 +3,16 @@ const Navigation = () => {
     <div className="navigation">
       <nav className="nav">
         <a className="nav__item" href="#">
-          Home
+          Tablice
         </a>
         <a className="nav__item" href="#">
-          About
+          Obrazac
+        </a>
+        <a className="nav__item" href="#">
+          Kartice
+        </a>
+        <a className="nav__item" href="#">
+          Mercedes
         </a>
       </nav>
     </div>
