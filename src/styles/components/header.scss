@@ -1,0 +1,54 @@
+@import "./../base/vars.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $silver;
+  padding: 1rem;
+
+  &__logo {
+    width: 10rem;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+
+    &__item {
+      color: $black;
+      font-size: 1.5rem;
+      text-decoration: none;
+      margin-right: 2.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &::after {
+        content: "";
+        background-color: $black;
+        display: block;
+        width: 0;
+        height: 0.125rem;
+        transition: all 250ms ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__inis {
+    font-size: 1.25rem;
+    font-family: "Fasthand", cursive;
+  }
+}
