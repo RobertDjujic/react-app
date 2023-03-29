@@ -1,0 +1,16 @@
+.form {
+  padding: 1rem;
+
+  &__input {
+    border: 0;
+    border-bottom: 1px solid $black;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    transition: all 250ms linear;
+
+    &:focus {
+      border-bottom: 1px solid $lightBlue;
+      outline: none;
+    }
+  }
+}

@@ -1,8 +1,7 @@
 .navigation {
   background-color: $black;
-  float: left;
   width: 10rem;
-  height: calc(100vh - 6.75rem);
+  height: 100%;
 
   .nav {
     display: flex;

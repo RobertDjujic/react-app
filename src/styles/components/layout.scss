@@ -1,0 +1,8 @@
+.layout {
+  display: flex;
+  height: calc(100vh - 6.75rem);
+
+  &__main {
+    width: 100%;
+  }
+}
