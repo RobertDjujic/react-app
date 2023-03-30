@@ -8,6 +8,7 @@
     border-radius: 1rem;
     cursor: pointer;
     padding: 0.25rem 1rem;
+    transition: all 200ms ease-out;
 
     &--ultra {
       border: 1px solid $ultramarine;
@@ -16,6 +17,7 @@
 
       &:hover {
         background-color: #c9e7f5;
+        transform: scale(1.1);
       }
     }
 
@@ -25,7 +27,8 @@
       font-weight: 500;
 
       &:hover {
-        background-color: #c3b1e1;
+        background-color: $pastelPurple;
+        transform: scale(1.1);
       }
     }
 
