@@ -1,8 +1,8 @@
 .header {
-  background-color: $silver;
+  background: linear-gradient(to right, rgb(255, 195, 113), rgb(255, 95, 109));
 
   &__logo {
-    width: 8rem;
+    width: 20rem;
   }
 
   &__nav {
@@ -11,8 +11,9 @@
     margin-right: 2rem;
 
     &__item {
-      color: $black;
+      color: $white;
       font-size: 1.25rem;
+      font-weight: 500;
       text-decoration: none;
       margin-right: 2rem;
 
@@ -22,7 +23,7 @@
 
       &::after {
         content: "";
-        background-color: $black;
+        background-color: $white;
         display: block;
         width: 0;
         height: 0.125rem;
@@ -47,6 +48,7 @@
   }
 
   &__inis {
+    color: $white;
     font-size: 1.25rem;
     font-family: "Fasthand", cursive;
   }
@@ -54,13 +56,15 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     padding: 1rem 2rem;
   }
 
   &__hamburger {
     display: block;
+    color: $white;
+    cursor: pointer;
     width: 1.5rem;
     margin: auto 0;
 

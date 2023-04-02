@@ -1,7 +1,9 @@
 .layout {
   display: flex;
+  height: calc(100vh - 6.221875rem);
 
   &__main {
+    overflow: scroll;
     width: 100%;
   }
 }
