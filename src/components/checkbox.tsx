@@ -1,9 +1,13 @@
+import CheckMark from "../assets/check-mark";
+
 const Checkbox = () => {
   return (
-    <form className="check">
-      <input className="check__input" type="checkbox" name="check" id="check" />
-      <label htmlFor="check">Lorem Ipsum</label>
-    </form>
+    <div className="checkbox">
+      <div className="checkbox__item">
+        <CheckMark />
+      </div>
+      Lorem Ipsum
+    </div>
   );
 };
 

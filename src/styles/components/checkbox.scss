@@ -1,2 +1,23 @@
 .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+
+  &__item {
+    display: flex;
+    background: linear-gradient(
+      to right,
+      rgb(255, 195, 113),
+      rgb(255, 95, 109)
+    );
+    border-radius: 0.25rem;
+    color: $white;
+    cursor: pointer;
+    padding: 0.125rem;
+
+    &:hover {
+      background: $pastelPurple;
+    }
+  }
 }
