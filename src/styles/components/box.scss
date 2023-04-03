@@ -1,0 +1,41 @@
+.box__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .box {
+    background-color: $pastelPurple;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 10rem;
+    height: 10rem;
+    transition: all 250ms ease;
+
+    &--translate {
+      &:hover {
+        transform: translate3d(3rem, 0, 0);
+      }
+    }
+
+    &--rotate {
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
+
+    &--scale {
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    &--skew {
+      &:hover {
+        transform: skew(15deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.flex {
+  &__wrapper {
+    border: 2px solid $silver;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    max-width: 37.5rem;
+  }
+
+  &__img {
+    width: 10rem;
+  }
+
+  &__icon {
+    &:hover {
+      color: $pastelPurple;
+    }
+  }
+
+  &--first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+      display: flex;
+    }
+
+    &__title {
+      align-self: flex-end;
+    }
+  }
+
+  &--second {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  &--third {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}

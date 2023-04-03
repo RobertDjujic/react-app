@@ -7,6 +7,8 @@ import Navigation from "./components/navigation";
 import Pagination from "./components/pagination";
 import Tags from "./components/tags";
 import "./styles/styles.scss";
+import TransformExe from "./components/transform-exe";
+import FlexExe from "./components/flex-exe";
 
 const App = () => {
   return (
@@ -41,6 +43,14 @@ const App = () => {
             <div className="container--component">
               <h2>Tags</h2>
               <Tags />
+            </div>
+            <div className="container--component">
+              <h2>Transform property exercise</h2>
+              <TransformExe />
+            </div>
+            <div className="container--component">
+              <h2>Flex property exercise</h2>
+              <FlexExe />
             </div>
           </div>
         </div>
