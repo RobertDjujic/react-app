@@ -5,6 +5,12 @@
     padding: 1rem;
     margin-bottom: 2rem;
     max-width: 37.5rem;
+
+    &.special {
+      display: flex;
+      justify-content: space-between;
+      max-width: 75rem;
+    }
   }
 
   &__img {
@@ -41,5 +47,22 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+  }
+
+  &--fourth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid $silver;
+    border-radius: 0.5rem;
+    text-align: justify;
+    padding: 1rem;
+    width: 20rem;
+
+    &__text {
+      display: flex;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
   }
 }
