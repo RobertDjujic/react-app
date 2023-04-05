@@ -9,6 +9,8 @@ import Tags from "./components/tags";
 import "./styles/styles.scss";
 import TransformExe from "./components/transform-exe";
 import FlexExe from "./components/flex-exe";
+import DollarIcon from "./assets/dollar-icon";
+import Input from "./components/input";
 
 const App = () => {
   return (
@@ -22,7 +24,8 @@ const App = () => {
           <div className="container">
             <div className="container--component">
               <h2>Button</h2>
-              <Button />
+              <Button value="Animate me" animate={true} icon={<DollarIcon />} />
+              <Button animate={false} color="yellow" />
             </div>
             <div className="container--component">
               <h2>Card</h2>
@@ -51,6 +54,11 @@ const App = () => {
             <div className="container--component">
               <h2>Flex property exercise</h2>
               <FlexExe />
+            </div>
+            <div className="container--component">
+              <h2>Input</h2>
+              <Input validation="" label="" />
+              <Input validation="Lorem Ipsum" label="Last Name" rounded />
             </div>
           </div>
         </div>

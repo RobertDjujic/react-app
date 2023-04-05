@@ -1,3 +1,26 @@
+@keyframes button-animation {
+  0% {
+    background: $pastelPurple;
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    background: $purple;
+    transform: translate(10rem, 0) rotate(90deg);
+  }
+  50% {
+    background: $silver;
+    transform: translate(10rem, 10rem) rotate(180deg);
+  }
+  75% {
+    background: $ultramarine;
+    transform: translate(0, 10rem) rotate(270deg);
+  }
+  100% {
+    background: $darkRed;
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
 .button {
   background: linear-gradient(to right, rgb(255, 195, 113), rgb(255, 95, 109));
   border: 0;
@@ -8,7 +31,30 @@
   padding: 0.75rem 3rem;
   transition: all 250ms cubic-bezier(0.47, 1.64, 0.41, 0.8) 0s;
 
+  span {
+    margin-left: 1rem;
+  }
+
+  &--animate {
+    &:active {
+      animation: button-animation 5s ease;
+    }
+  }
+
   &:hover {
     transform: scale(1.1);
+  }
+
+  //colors
+  &--red {
+    background: $darkRed;
+  }
+
+  &--green {
+    background: $darkGreen;
+  }
+
+  &--yellow {
+    background: yellow;
   }
 }
