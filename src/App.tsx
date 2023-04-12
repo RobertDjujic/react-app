@@ -13,6 +13,7 @@ import DollarIcon from "./assets/dollar-icon";
 import Input from "./components/input";
 import Card2 from "./components/card-2";
 import CardGrid from "./components/card-grid";
+import CardGrid2 from "./components/card-grid-2";
 
 const App = () => {
   return (
@@ -64,6 +65,10 @@ const App = () => {
             <div className="container--component">
               <h2>Responsive grid</h2>
               <CardGrid />
+            </div>
+            <div className="container--component">
+              <h2>Responsive grid #2</h2>
+              <CardGrid2 />
             </div>
           </div>
         </div>

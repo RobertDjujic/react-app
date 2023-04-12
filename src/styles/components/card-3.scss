@@ -1,0 +1,90 @@
+.card-3 {
+  background-color: $white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    background-color: $silver;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    @media (min-width: $media-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $media-lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 6rem;
+
+    &__week {
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    &__league {
+      color: $gray;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__logo {
+    max-width: 4rem;
+    margin-right: 1rem;
+
+    &__item {
+      width: 100%;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &__label {
+      color: $gray;
+      margin-bottom: 1rem;
+    }
+
+    &__prize {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    &__banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $ultramarine;
+      border-radius: 50%;
+      color: $white;
+      text-align: center;
+      padding: 0.25rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    &__label {
+      color: $gray;
+      margin-bottom: 0.75rem;
+    }
+
+    &__number {
+      font-weight: 500;
+    }
+  }
+}

@@ -33,7 +33,7 @@ const Button = ({
       }`}
     >
       {icon}
-      <span>{value}</span>
+      <div className="button__value">{value}</div>
     </button>
   );
 };

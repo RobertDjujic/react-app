@@ -1,0 +1,19 @@
+.toggle {
+  background-color: $darkGreen;
+  border-radius: 1rem;
+  cursor: pointer;
+  width: 4rem;
+  height: 2rem;
+  position: relative;
+
+  &__btn {
+    background-color: $white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2.25rem;
+    position: absolute;
+    right: 0;
+    top: -1px;
+  }
+}

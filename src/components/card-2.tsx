@@ -1,7 +1,7 @@
 import Button from "./button";
 
 type CardProps = {
-  title: string;
+  title?: string;
 };
 
 const Card2 = ({ title }: CardProps) => {
