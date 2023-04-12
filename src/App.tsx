@@ -11,6 +11,8 @@ import TransformExe from "./components/transform-exe";
 import FlexExe from "./components/flex-exe";
 import DollarIcon from "./assets/dollar-icon";
 import Input from "./components/input";
+import Card2 from "./components/card-2";
+import CardGrid from "./components/card-grid";
 
 const App = () => {
   return (
@@ -24,8 +26,7 @@ const App = () => {
           <div className="container">
             <div className="container--component">
               <h2>Button</h2>
-              <Button value="Animate me" animate={true} icon={<DollarIcon />} />
-              <Button animate={false} color="yellow" />
+              <Button value="ANIMATE ME" animate={true} icon={<DollarIcon />} />
             </div>
             <div className="container--component">
               <h2>Card</h2>
@@ -59,6 +60,10 @@ const App = () => {
               <h2>Input</h2>
               <Input validation="" label="" />
               <Input validation="Lorem Ipsum" label="Last Name" rounded />
+            </div>
+            <div className="container--component">
+              <h2>Responsive grid</h2>
+              <CardGrid />
             </div>
           </div>
         </div>

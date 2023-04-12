@@ -1,18 +1,18 @@
 @keyframes button-animation {
   0% {
-    background: $pastelPurple;
+    background: $darkRed;
     transform: translate(0, 0) rotate(0);
   }
   25% {
-    background: $purple;
+    background: $darkBlue;
     transform: translate(10rem, 0) rotate(90deg);
   }
   50% {
-    background: $silver;
+    background: $darkGreen;
     transform: translate(10rem, 10rem) rotate(180deg);
   }
   75% {
-    background: $ultramarine;
+    background: $yellow;
     transform: translate(0, 10rem) rotate(270deg);
   }
   100% {
@@ -22,6 +22,8 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
   background: linear-gradient(to right, rgb(255, 195, 113), rgb(255, 95, 109));
   border: 0;
   border-radius: 1.5rem;
@@ -55,6 +57,6 @@
   }
 
   &--yellow {
-    background: yellow;
+    background: $yellow;
   }
 }
