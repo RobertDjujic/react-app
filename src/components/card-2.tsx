@@ -6,16 +6,16 @@ type CardProps = {
 
 const Card2 = ({ title }: CardProps) => {
   return (
-    <div className="card-2">
-      <div className="card-2__img">
+    <div className="card--secondary">
+      <div className="card--secondary__img">
         <img
-          className="card-2__img__item"
+          className="card--secondary__img__item"
           src="https://source.unsplash.com/random/?design"
           alt="Card hero image"
         />
       </div>
-      <div className="card-2__title">{title}</div>
-      <div className="card-2__description">
+      <div className="card--secondary__title">{title}</div>
+      <div className="card--secondary__description">
         {" "}
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -25,7 +25,7 @@ const Card2 = ({ title }: CardProps) => {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </div>
-      <div className="card-2__footer">
+      <div className="card--secondary__footer">
         <Button color="green" value="OK" />
         <Button value="Cancel" />
       </div>

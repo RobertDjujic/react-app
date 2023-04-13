@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const Toggle = () => {
-  const [state, setState] = useState<boolean>(false);
+  const [active, setActive] = useState<boolean>(false);
 
   return (
-    <div className="toggle">
-      <div className="toggle__btn"></div>
+    <div className={`toggle ${active ? "active" : ""}`}>
+      <div className="toggle__thumb" onClick={() => setActive(!active)}></div>
     </div>
   );
 };
