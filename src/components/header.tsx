@@ -10,11 +10,14 @@ const Header = () => {
         </div>
         <div className="header__actions">
           <nav className="header__nav">
-            <a className="header__nav__item" href="#">
+            <a className="header__nav__item" href="/">
               Početna
             </a>
-            <a className="header__nav__item" href="#">
-              O meni
+            <a className="header__nav__item" href="/exe">
+              Vježbe
+            </a>
+            <a className="header__nav__item" href="/ispit">
+              CSS ispit
             </a>
           </nav>
           <div className="header__inis">R. Dj.</div>

@@ -1,40 +1,84 @@
-.box__wrapper {
-  display: flex;
-  justify-content: space-between;
+@keyframes box-animation {
+  0% {
+    transform: translate3d(0, -20rem, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 
-  .box {
-    background-color: $pastelPurple;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    width: 10rem;
-    height: 10rem;
-    transition: all 250ms ease;
+.box {
+  background-color: $pastelPurple;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 10rem;
+  height: 10rem;
+  transition: all 250ms ease;
 
-    &--translate {
-      &:hover {
-        transform: translate3d(3rem, 0, 0);
-      }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--translate {
+    &:hover {
+      transform: translate3d(3rem, 0, 0);
+    }
+  }
+
+  &--rotate {
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  &--scale {
+    &:hover {
+      transform: scale(1.1);
     }
 
-    &--rotate {
-      &:hover {
-        transform: rotate(90deg);
-      }
+    &:active {
+      transform: scale(0.9);
     }
+  }
 
-    &--scale {
-      &:hover {
-        transform: scale(1.1);
-      }
-
-      &:active {
-        transform: scale(0.9);
-      }
+  &--skew {
+    &:hover {
+      transform: skew(15deg);
     }
+  }
 
-    &--skew {
-      &:hover {
-        transform: skew(15deg);
+  &--secondary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 5rem auto;
+    max-width: 37.5rem;
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      font-size: 4rem;
+      font-weight: bold;
+      width: 10rem;
+      height: 10rem;
+      transform: translate3d(0, -20rem, 0);
+      animation: box-animation 2s ease forwards;
+
+      &:nth-child(1) {
+        background-color: $black;
+      }
+
+      &:nth-child(2) {
+        background-color: $red;
+        animation-delay: 1s;
+      }
+
+      &:nth-child(3) {
+        background-color: $orange;
+        animation-delay: 2s;
       }
     }
   }

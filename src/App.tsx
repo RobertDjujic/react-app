@@ -1,21 +1,31 @@
-import Button from "./components/button";
-import Checkbox from "./components/checkbox";
-import Card from "./components/card";
 import Header from "./components/header";
-import Modal from "./components/modal";
 import Navigation from "./components/navigation";
-import Pagination from "./components/pagination";
-import Tags from "./components/tags";
 import "./styles/styles.scss";
-import TransformExe from "./components/transform-exe";
-import FlexExe from "./components/flex-exe";
-import DollarIcon from "./assets/dollar-icon";
-import Input from "./components/input";
-import Card2 from "./components/card-2";
-import CardGrid from "./components/card-grid";
-import CardGrid2 from "./components/card-grid-2";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Exe from "./pages/exe";
+import Ispit from "./pages/ispit";
+import Home from "./pages/home";
+import Mlinar from "./pages/mlinar";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/ispit",
+      element: <Ispit />,
+    },
+    {
+      path: "/exe",
+      element: <Exe />,
+    },
+    {
+      path: "/exe",
+      element: <Mlinar />,
+    },
+  ]);
   return (
     <div className="App">
       <Header />
@@ -24,53 +34,7 @@ const App = () => {
           <Navigation />
         </div>
         <div className="layout__main">
-          <div className="container">
-            <div className="container--component">
-              <h2>Button</h2>
-              <Button value="ANIMATE ME" animate={true} icon={<DollarIcon />} />
-            </div>
-            <div className="container--component">
-              <h2>Card</h2>
-              <Card />
-            </div>
-            <div className="container--component">
-              <h2>Checkbox</h2>
-              <Checkbox />
-            </div>
-            <div className="container--component">
-              <h2>Modal</h2>
-              <Modal />
-            </div>
-            <div className="container--component">
-              <h2>Pagination</h2>
-              <Pagination />
-            </div>
-            <div className="container--component">
-              <h2>Tags</h2>
-              <Tags />
-            </div>
-            <div className="container--component">
-              <h2>Transform property exercise</h2>
-              <TransformExe />
-            </div>
-            <div className="container--component">
-              <h2>Flex property exercise</h2>
-              <FlexExe />
-            </div>
-            <div className="container--component">
-              <h2>Input</h2>
-              <Input validation="" label="" />
-              <Input validation="Lorem Ipsum" label="Last Name" rounded />
-            </div>
-            <div className="container--component">
-              <h2>Responsive grid</h2>
-              <CardGrid />
-            </div>
-            <div className="container--component">
-              <h2>Responsive grid #2</h2>
-              <CardGrid2 />
-            </div>
-          </div>
+          <RouterProvider router={router} />
         </div>
       </div>
     </div>
