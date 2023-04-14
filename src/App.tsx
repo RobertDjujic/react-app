@@ -22,7 +22,7 @@ const App = () => {
       element: <Exe />,
     },
     {
-      path: "/exe",
+      path: "/mlinar",
       element: <Mlinar />,
     },
   ]);
