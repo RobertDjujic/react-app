@@ -19,12 +19,65 @@
     &__name {
       margin-bottom: 0.5rem;
       font-weight: 700;
+      text-transform: uppercase;
     }
 
     &__desc {
       font-weight: 400;
       letter-spacing: -0.1px;
       opacity: 0.6;
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 250ms ease;
+
+    &__title {
+      position: absolute;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2.25rem;
+      opacity: 0;
+      transform: translate3d(0, -3rem, 0);
+      transition: all 250ms ease;
+    }
+
+    &::after {
+      content: "\2192";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9b601;
+      border-radius: 50%;
+      color: #131516;
+      cursor: pointer;
+      font-size: 1.5rem;
+      position: absolute;
+      opacity: 0;
+      width: 3rem;
+      height: 3rem;
+      transition: all 250ms ease;
+    }
+
+    &:hover {
+      .product__img {
+        &__title {
+          opacity: 1;
+        }
+
+        &__item {
+          opacity: 0.33;
+        }
+      }
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 }

@@ -11,118 +11,102 @@ import packed from "./../assets/packed.png";
 import cakes from "./../assets/cakes.png";
 import cake from "./../assets/cake.png";
 import celebratoryCake from "./../assets/celebratory-cake.png";
+import Product from "./product";
 
 const ProductGrid = () => {
   return (
     <div className="product">
       <div className="product__grid">
-        <div>
-          <img src={bread} alt="Image of a piece of bread" />
-          <div className="product__info">
-            <div className="product__info__name">KRUH</div>
-            <div className="product__info__desc">Kruhovi ravno iz peći</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika kruha"
+          imgDesc="Kruhovi ravno iz peći"
+          imgSrc={bread}
+          imgTitle="Kruh"
+        />
 
-        <div>
-          <img src={pastries} alt="Image of pastries" />
-          <div className="product__info">
-            <div className="product__info__name">PECIVA</div>
-            <div className="product__info__desc">
-              Tradicionalna, ukusna i jednostavna
-            </div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika peciva"
+          imgDesc="Tradicionalna, ukusna i jednostavna"
+          imgSrc={pastries}
+          imgTitle="Peciva"
+        />
 
-        <div>
-          <img src={savoury} alt="Image of savoury pastries" />
-          <div className="product__info">
-            <div className="product__info__name">SLANO</div>
-            <div className="product__info__desc">Neodoljivi slani zalogaji</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika slanih peciva"
+          imgDesc="Neodoljivi slani zalogaji"
+          imgSrc={savoury}
+          imgTitle="Slano"
+        />
 
-        <div>
-          <img src={sweet} alt="Image of sweet pastries" />
-          <div className="product__info">
-            <div className="product__info__name">SLATKO</div>
-            <div className="product__info__desc">Najslađe od finih peciva</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika slatkih peciva"
+          imgDesc="Najslađe od finih peciva"
+          imgSrc={sweet}
+          imgTitle="Slatko"
+        />
 
-        <div>
-          <img src={burek} alt="Image of a burek" />
-          <div className="product__info">
-            <div className="product__info__name">BUREK</div>
-            <div className="product__info__desc">Sočni okusi tradicije</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika bureka"
+          imgDesc="Sočni okusi tradicije"
+          imgSrc={burek}
+          imgTitle="Burek"
+        />
 
-        <div>
-          <img src={pizza} alt="Image of a pizza" />
-          <div className="product__info">
-            <div className="product__info__name">PIZZA</div>
-            <div className="product__info__desc">Svježe, bogate i slasne</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika pizze"
+          imgDesc="Svježe, bogate i slasne"
+          imgSrc={pizza}
+          imgTitle="Pizza"
+        />
 
-        <div>
-          <img src={sandwich} alt="Image of a sandwich" />
-          <div className="product__info">
-            <div className="product__info__name">SENDVIČI</div>
-            <div className="product__info__desc">Najslađe od finih peciva</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika sendviča"
+          imgDesc="Bogati i neodoljivi"
+          imgSrc={sandwich}
+          imgTitle="Sendviči"
+        />
 
-        <div>
-          <img src={salad} alt="Image of a salad" />
-          <div className="product__info">
-            <div className="product__info__name">SLATKO</div>
-            <div className="product__info__desc">Najslađe od finih peciva</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika salate"
+          imgDesc="Zdrav obrok u žurbi"
+          imgSrc={salad}
+          imgTitle="Salata"
+        />
 
-        <div>
-          <img src={horeca} alt="Image of a horeca" />
-          <div className="product__info">
-            <div className="product__info__name">SLATKO</div>
-            <div className="product__info__desc">Najslađe od finih peciva</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika horece"
+          imgDesc="Prednost vašeg poslovanja"
+          imgSrc={horeca}
+          imgTitle="Horeca"
+        />
 
-        <div>
-          <img src={packed} alt="Image of packed bread" />
-          <div className="product__info">
-            <div className="product__info__name">SLATKO</div>
-            <div className="product__info__desc">Najslađe od finih peciva</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika kruha"
+          imgDesc="Dugotrajni i puni okusa"
+          imgSrc={packed}
+          imgTitle="Pakirano"
+        />
 
-        <div>
-          <img src={cakes} alt="Image of cakes" />
-          <div className="product__info">
-            <div className="product__info__name">KOLAČI</div>
-            <div className="product__info__desc">Bogati okusom</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika kolača"
+          imgDesc="Bogati okusom"
+          imgSrc={cakes}
+          imgTitle="Kolači"
+        />
 
-        <div>
-          <img src={cake} alt="Image of a cake" />
-          <div className="product__info">
-            <div className="product__info__name">TORTE</div>
-            <div className="product__info__desc">
-              Kraljevski ukusne slastice
-            </div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika torte"
+          imgDesc="Kraljevski ukusne slastice"
+          imgSrc={cake}
+          imgTitle="Torte"
+        />
 
-        <div>
-          <img src={celebratoryCake} alt="Image of a birthday cake" />
-          <div className="product__info">
-            <div className="product__info__name">PRIGODNE TORTE</div>
-            <div className="product__info__desc">Torte za sve prigode</div>
-          </div>
-        </div>
+        <Product
+          imgAlt="Slika rođendanske torte"
+          imgDesc="Torte za sve prigode"
+          imgSrc={celebratoryCake}
+          imgTitle="Prigodne torte"
+        />
       </div>
     </div>
   );

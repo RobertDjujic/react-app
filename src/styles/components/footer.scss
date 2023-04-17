@@ -47,13 +47,30 @@
     align-items: flex-end;
 
     &__item {
+      cursor: pointer;
       font-family: "Montserrat", sans-serif;
       font-size: 0.875rem;
       font-weight: 500;
       line-height: 1.3125rem;
       margin-right: 1.5rem;
 
+      &:not(.gray)::after {
+        content: "";
+        background-color: $white;
+        display: block;
+        width: 0;
+        height: 0.125rem;
+        transition: all 250ms ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
       &.gray {
+        cursor: default;
         opacity: 0.6;
       }
 
@@ -69,6 +86,15 @@
     &__badges {
       display: flex;
       align-items: center;
+
+      div {
+        cursor: pointer;
+        transition: all 250ms ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 
@@ -80,6 +106,7 @@
     display: flex;
 
     &__item {
+      cursor: pointer;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
       font-size: 0.875rem;
@@ -88,6 +115,21 @@
 
       &:first-child {
         margin-left: 0;
+      }
+
+      &::after {
+        content: "";
+        background-color: $white;
+        display: block;
+        width: 0;
+        height: 0.125rem;
+        transition: all 250ms ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
