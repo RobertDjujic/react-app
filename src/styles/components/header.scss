@@ -73,4 +73,67 @@
       display: none;
     }
   }
+
+  &--teorem {
+    display: flex;
+    justify-content: space-between;
+    color: #00000080;
+    margin-top: 2rem;
+
+    &__nav {
+      display: flex;
+      align-items: center;
+
+      &__item {
+        line-height: 1.375rem;
+        margin-right: 2.5rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+
+      &__item {
+        display: flex;
+        margin-right: 5.875rem;
+
+        div {
+          display: flex;
+          align-items: center;
+          border-radius: 0.625rem;
+          line-height: 1.6875;
+          padding: 0.5rem 1.5rem;
+          margin-right: 1rem;
+
+          &:first-child {
+            border: 2px solid #7f5fd3;
+            color: #7f5fd3;
+          }
+
+          &:last-child {
+            background: linear-gradient(
+              226.69deg,
+              rgba(127, 95, 211, 0.9) 4.52%,
+              #5c3ee8 94.64%
+            );
+            color: $white;
+            margin-right: 0;
+          }
+        }
+      }
+
+      &__lang {
+        display: flex;
+        align-items: center;
+
+        div:first-child {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
 }
