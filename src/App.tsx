@@ -7,6 +7,7 @@ import Ispit from "./pages/ispit";
 import Home from "./pages/home";
 import Mlinar from "./pages/mlinar";
 import Teorem from "./pages/teorem";
+import Varijable from "./pages/varijable";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const App = () => {
     {
       path: "/teorem",
       element: <Teorem />,
+    },
+    {
+      path: "/varijable",
+      element: <Varijable />,
     },
   ]);
   return (

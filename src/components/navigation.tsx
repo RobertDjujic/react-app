@@ -8,6 +8,9 @@ const Navigation = () => {
         <a className="nav__item" href="/teorem">
           Teorem
         </a>
+        <a className="nav__item" href="/varijable">
+          Varijable
+        </a>
       </nav>
     </div>
   );

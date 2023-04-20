@@ -77,12 +77,12 @@
   &--teorem {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #00000080;
     margin-top: 2rem;
 
     &__nav {
       display: flex;
-      align-items: center;
 
       &__item {
         line-height: 1.375rem;

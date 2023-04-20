@@ -19,4 +19,22 @@
       font-family: "Lato", sans-serif;
     }
   }
+
+  &__table {
+    border: 1px solid $black;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid $black;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    th {
+      background-color: $pastelPurple;
+      color: $white;
+      font-weight: normal;
+    }
+  }
 }
