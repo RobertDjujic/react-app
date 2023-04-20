@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Table from "../components/table";
 
 type UserType = {
   name: string;
@@ -55,11 +56,6 @@ const Varijable = () => {
     setValue(Number(input.value));
   };
 
-  const fruitName: string = "Banana";
-  const fruitCalories: number = 88.7;
-  const fruitColor: string = "Yellow";
-  const fruitEdible: boolean = true;
-
   return (
     <div className="container">
       <h1>Varijable vježba</h1>
@@ -88,20 +84,7 @@ const Varijable = () => {
         </div>
         <hr />
         <div>
-          <table className="container__table" title="Fruit">
-            <tr>
-              <th>Name</th>
-              <th>Calories</th>
-              <th>Color</th>
-              <th>Edible</th>
-            </tr>
-            <tr>
-              <td>{fruitName}</td>
-              <td>{fruitCalories}</td>
-              <td>{fruitColor}</td>
-              <td>{fruitEdible ? "Yes" : "No"}</td>
-            </tr>
-          </table>
+          <Table />
         </div>
       </div>
     </div>
