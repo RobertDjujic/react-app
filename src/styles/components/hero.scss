@@ -1,0 +1,74 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__title {
+    font-weight: 900;
+    font-size: 5rem;
+    line-height: 6.25rem;
+    letter-spacing: 0.008203125rem;
+    text-align: center;
+    width: 45.25rem;
+
+    &__wrap {
+      position: relative;
+      margin-top: 10.125rem;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    text-align: center;
+    opacity: 0.5;
+    width: 21.8125rem;
+  }
+
+  &__img {
+    border-radius: 50%;
+    position: absolute;
+    width: 5.5625rem;
+    height: 5.5625rem;
+
+    &__wrap {
+      &--none {
+        display: none;
+      }
+    }
+
+    &--upper {
+      background: url(./../assets/tutor-1.png);
+      top: 0;
+      left: 0;
+    }
+
+    &--bottom {
+      background: url(./../assets/tutor-2.png);
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__ellipse {
+    border: 1px dashed #5c3ee8;
+    border-radius: 50%;
+    position: absolute;
+    width: 4.25rem;
+    height: 4.25rem;
+
+    &--upper {
+      top: 2rem;
+      left: -1rem;
+      z-index: -1;
+    }
+
+    &--bottom {
+      bottom: 2rem;
+      right: 1.5rem;
+      z-index: -1;
+    }
+  }
+}
