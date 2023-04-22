@@ -1,0 +1,36 @@
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #0000000d;
+  cursor: pointer;
+  width: 45.5625rem;
+  transition: all 250ms ease;
+
+  &:hover {
+    border: 1px solid $black;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    padding: 1.5rem;
+    opacity: 0.5;
+    transition: all 250ms ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__arrow {
+    padding: 0 2.375rem;
+  }
+}

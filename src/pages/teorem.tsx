@@ -1,7 +1,10 @@
 import Banner from "../components/banner";
+import Dropdown from "../components/dropdown";
+import DropdownGrid from "../components/dropdown-grid";
 import Header2 from "../components/header-2";
 import Hero from "../components/hero";
 import InfoCardGrid from "../components/info-card-grid";
+import List from "../components/list";
 import calender from "./../assets/calender.jpg";
 
 const Teorem = () => {
@@ -27,7 +30,6 @@ const Teorem = () => {
             heroTitleClass="hero__title hero__title--second"
             heroText="We'll provide you with everything you need to teach online. We help you find students and manage lessons."
             heroTextClass="hero__text hero__text--second"
-            heroImg={false}
           />
           <InfoCardGrid />
           <Banner />
@@ -47,6 +49,16 @@ const Teorem = () => {
             heroTitleClass="hero__title hero__title--third"
           />
           <Banner />
+          <Hero
+            heroTitle="How to become an online tutor on Teorem"
+            heroTitleClass="hero__title hero__title--fourth"
+          />
+          <List />
+          <Hero
+            heroTitle="Frequently asked questions"
+            heroTitleClass="hero__title"
+          />
+          <DropdownGrid />
         </main>
       </div>
     </div>
