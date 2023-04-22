@@ -1,0 +1,46 @@
+.banner {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    226.69deg,
+    rgba(127, 95, 211, 0.9) 4.52%,
+    #5c3ee8 94.64%
+  );
+  border-radius: 1.5rem;
+  width: 69.375rem;
+  height: 20.25rem;
+
+  &__text {
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    text-align: center;
+    padding-left: 5.9375rem;
+  }
+
+  &__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.9375rem;
+
+    &__item {
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      color: $white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &__subtitle {
+      color: #ffffff80;
+      line-height: 1.5rem;
+    }
+  }
+}
