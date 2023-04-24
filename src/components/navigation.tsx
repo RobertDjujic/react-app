@@ -11,6 +11,9 @@ const Navigation = () => {
         <a className="nav__item" href="/varijable">
           Varijable
         </a>
+        <a className="nav__item" href="/petlje">
+          Petlje
+        </a>
       </nav>
     </div>
   );
