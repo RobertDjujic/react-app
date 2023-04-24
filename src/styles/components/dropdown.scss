@@ -9,6 +9,18 @@
 
   &:hover {
     border: 1px solid $black;
+
+    .dropdown__question {
+      opacity: 1;
+    }
+
+    .dropdown__answer {
+      opacity: 1;
+    }
+  }
+
+  &.inactive {
+    display: none;
   }
 
   &__grid {
@@ -18,19 +30,27 @@
     margin-top: 5rem;
   }
 
-  &__text {
+  &__question {
     font-size: 1.5rem;
     line-height: 2.25rem;
     padding: 1.5rem;
     opacity: 0.5;
     transition: all 250ms ease;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 
   &__arrow {
     padding: 0 2.375rem;
+  }
+
+  &__answer {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    padding: 1rem;
+    opacity: 0.5;
+    transition: all 250ms ease;
+
+    &.inactive {
+      display: none;
+    }
   }
 }

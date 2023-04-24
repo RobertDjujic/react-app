@@ -1,6 +1,6 @@
 import Banner from "../components/banner";
-import Dropdown from "../components/dropdown";
 import DropdownGrid from "../components/dropdown-grid";
+import Footer3 from "../components/footer-3";
 import Header2 from "../components/header-2";
 import Hero from "../components/hero";
 import InfoCardGrid from "../components/info-card-grid";
@@ -61,6 +61,7 @@ const Teorem = () => {
           <DropdownGrid />
         </main>
       </div>
+      <Footer3 />
     </div>
   );
 };

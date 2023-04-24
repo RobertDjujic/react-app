@@ -44,6 +44,7 @@
 
   &__btn {
     color: $white;
+    cursor: pointer;
     background: linear-gradient(
       226.69deg,
       rgba(127, 95, 211, 0.9) 4.52%,
@@ -53,5 +54,10 @@
     box-shadow: 8px 8px 12px #0000000d;
     padding: 1rem 5rem;
     margin-top: 5.875rem;
+    transition: all 250ms ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

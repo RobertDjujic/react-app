@@ -18,9 +18,7 @@ const Header2 = () => {
           <div>Try for free</div>
         </div>
         <div className="header--teorem__btn__lang">
-          <div>
-            <LanguageIcon />
-          </div>
+          <LanguageIcon />
           <div>EN</div>
         </div>
       </div>
