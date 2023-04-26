@@ -2,18 +2,18 @@ const Vjezba2604 = () => {
   //Nizovi
   let arr = ["mama", "tata", "baka", "dida"];
   for (let i = 0; i < arr.length; i++) {
-    /*if (arr[i] == "baka") {
-      break;
-    }
-    console.log(arr[i]);*/
-    /*if (arr[i] == "tata") {
+    //if (arr[i] == "baka") {
+    //  break;
+    //}
+    //console.log(arr[i]);
+    if (arr[i] == "tata") {
       delete arr[i];
-    }*/
+    }
   }
 
   //delete arr[1];
-  /*arr.push("Robert");
-  console.log("Naš array je: ", arr);*/
+  //arr.push("Robert");
+  //console.log("Naš array je: ", arr);
 
   //Funkcije
   let baka;
@@ -37,17 +37,17 @@ const Vjezba2604 = () => {
   };
 
   let car: CarType = {
+    boja: "crna",
+    cijena: "117.850,00€",
+    domet: "782 km",
     marka: "Mercedes-Benz",
     model: "EQS",
-    boja: "crna",
-    cijena: 117850,
-    domet: 782,
     snaga: "385 kW",
     vrijemePunjenja: "32 min",
-    vrstaAutomobila: "Električni",
+    vrstaMotora: "električni",
   };
 
-  const recenica = `Moj auto je ${car.marka} ${car.model}. Njegova boja je ${car.boja}. Cijena mu je ${car.cijena} eura. Domet mu je ${car.domet}, a snaga ${car.snaga}.`;
+  const recenica = `Moj auto je ${car.marka} ${car.model}. Njegova boja je ${car.boja}. Cijena mu je ${car.cijena}. Domet mu je ${car.domet}, a snaga ${car.snaga}.`;
 
   const printValue = (key: string) => {
     return car[key];
@@ -56,18 +56,31 @@ const Vjezba2604 = () => {
   //Zadatak
   //Ispiši najveću vrijednost niza
 
-  let brojevi = [12, 98, 65, 4, 63, 51, 71, 582, 13, 4, 6, 9, 65, 56];
+  const numbers = [12, 98, 65, 4, 63, 51, 71, 582, 13, 4, 6, 9, 65, 56];
+  let largestNumber = 0;
 
-  let maxNumber = brojevi[0];
+  for (let i = 0; i < numbers.length; i++)
+    if (numbers[i] > largestNumber) {
+      largestNumber = numbers[i];
+    }
 
-  const largestNumber = () => {
-    for (let i = 0; i < brojevi.length; i++)
-      if (brojevi[i] > maxNumber) {
-        maxNumber = brojevi[i];
-      }
-  };
+  console.log(largestNumber);
 
-  console.log(maxNumber);
+  //Zadaća
+  //ispiši najdužu i najkraću riječ iz niza
+  const rijeci = [
+    "balance",
+    "biscuit",
+    "side",
+    "grind",
+    "refund",
+    "cast",
+    "circulate",
+    "accumulation",
+    "fold",
+    "cut",
+    "entertainment",
+  ];
 
   return (
     <div className="container">
