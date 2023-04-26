@@ -22,11 +22,11 @@ const Petlje = () => {
     /*let test = Math.PI * inputValue * 2;
     console.log(test);*/
     //4. ispisati string do zadanog broja
-    let x = [0];
+    /*let x = [0];
     for (let i = 0; i < inputValue; i++) {
       x.push(i);
     }
-    console.log(x);
+    console.log(x);*/
   };
   return (
     <div className="container">
