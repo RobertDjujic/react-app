@@ -82,6 +82,21 @@ const Vjezba2604 = () => {
     "entertainment",
   ];
 
+  let longestWord = rijeci[0];
+  let shortestWord = rijeci[0];
+
+  for (let i = 0; i < rijeci.length; i++) {
+    if (rijeci[i].length > longestWord.length) {
+      longestWord = rijeci[i];
+    }
+    if (rijeci[i].length < shortestWord.length) {
+      shortestWord = rijeci[i];
+    }
+  }
+
+  console.log(longestWord);
+  console.log(shortestWord);
+
   return (
     <div className="container">
       <h1>Funkcije</h1>
