@@ -10,6 +10,7 @@ import Teorem from "./pages/teorem";
 import Varijable from "./pages/varijable";
 import Petlje from "./pages/petlje";
 import Vjezba2604 from "./pages/vjezba-2604";
+import Vjezba2804 from "./pages/vjezba-2804";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const App = () => {
     {
       path: "/vjezba-2604",
       element: <Vjezba2604 />,
+    },
+    {
+      path: "/vjezba-2804",
+      element: <Vjezba2804 />,
     },
   ]);
   return (
