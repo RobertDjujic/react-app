@@ -242,7 +242,9 @@ const Vjezba2804 = () => {
                   <td>{student.height}</td>
                   <td>{student.hobby}</td>
                   <td>{student.employed}</td>
-                  <td>{student.favoriteColor}</td>
+                  <td style={{ color: student.favoriteColor }}>
+                    {student.favoriteColor}
+                  </td>
                 </tr>
               );
             })}
