@@ -241,7 +241,7 @@ const Vjezba2804 = () => {
                   <td>{student.gender}</td>
                   <td>{student.height}</td>
                   <td>{student.hobby}</td>
-                  <td>{student.employed}</td>
+                  <td>{student.employed ? "Yes" : "No"}</td>
                   <td style={{ color: student.favoriteColor }}>
                     {student.favoriteColor}
                   </td>

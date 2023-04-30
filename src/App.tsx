@@ -11,6 +11,7 @@ import Varijable from "./pages/varijable";
 import Petlje from "./pages/petlje";
 import Vjezba2604 from "./pages/vjezba-2604";
 import Vjezba2804 from "./pages/vjezba-2804";
+import Vjezba3004 from "./pages/vjezba-3004";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const App = () => {
     {
       path: "/vjezba-2804",
       element: <Vjezba2804 />,
+    },
+    {
+      path: "/vjezba-3004",
+      element: <Vjezba3004 />,
     },
   ]);
   return (
