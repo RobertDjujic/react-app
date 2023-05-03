@@ -12,6 +12,7 @@ import Petlje from "./pages/petlje";
 import Vjezba2604 from "./pages/vjezba-2604";
 import Vjezba2804 from "./pages/vjezba-2804";
 import Vjezba3004 from "./pages/vjezba-3004";
+import Vjezba0305 from "./pages/vjezba-0305";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const App = () => {
     {
       path: "/vjezba-3004",
       element: <Vjezba3004 />,
+    },
+    {
+      path: "/vjezba-0305",
+      element: <Vjezba0305 />,
     },
   ]);
   return (
