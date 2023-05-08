@@ -23,6 +23,9 @@ const Home = () => {
           <li>
             <a href="/vjezba-0305">Vježba 0305</a>
           </li>
+          <li>
+            <a href="/breweries">Breweries</a>
+          </li>
         </ul>
       </div>
     </div>
