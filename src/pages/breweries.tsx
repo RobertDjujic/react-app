@@ -10,7 +10,8 @@ type BreweryType = {
 const Breweries = () => {
   const [data, setData] = useState<BreweryType[]>([]);
   const [dataByCity, setDataByCity] = useState<BreweryType[]>([]);
-  const [dataSearch, setDataSearch] = useState<BreweryType[]>([]);
+  const [searchData, setSearchData] = useState<BreweryType[]>([]);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   const getBreweries = () => {
     fetch("https://api.openbrewerydb.org/v1/breweries")
@@ -37,18 +38,15 @@ const Breweries = () => {
       .catch((error) => console.error(error));
   };
 
-  let beer: string;
-
-  const searchBreweries = () => {
-    let beerName = beer;
+  const handleSearch = (searchValue: string) => {
     fetch(
-      `https://api.openbrewerydb.org/v1/breweries/search?query=${beerName}&per_page=3`
+      `https://api.openbrewerydb.org/v1/breweries/search?query=${searchValue}`
     )
       .then((response) => {
         return response.json();
       })
       .then((jsonData) => {
-        setDataSearch(jsonData);
+        setSearchData(jsonData);
         console.log("Search result: ", jsonData);
       })
       .catch((error) => console.error(error));
@@ -56,16 +54,8 @@ const Breweries = () => {
 
   useEffect(() => {
     getBreweries();
-    getBreweryByCity("london", 10);
-    searchBreweries();
+    getBreweryByCity("san_diego", 4);
   }, []);
-
-  const handleInput = (e: MouseEvent) => {
-    e.preventDefault();
-    let input = document.querySelector(".input") as HTMLInputElement;
-    beer = input.value;
-    searchBreweries();
-  };
 
   return (
     <div className="container">
@@ -76,7 +66,7 @@ const Breweries = () => {
             return <div key={brewery.id}>{brewery.name}</div>;
           })
         ) : (
-          <div>Nema niti jedna pivovara za zadani parametar</div>
+          <div>Nema niti jedna pivovara za zadani parametar.</div>
         )}
       </div>
       <hr />
@@ -87,27 +77,35 @@ const Breweries = () => {
             return <div key={brewery.id}>{brewery.name}</div>;
           })
         ) : (
-          <div>Nema niti jedna pivovara za zadani parametar</div>
+          <div>Nema niti jedna pivovara za zadani parametar.</div>
         )}
       </div>
       <hr />
       <h1>Search Breweries</h1>
-      <form action="">
-        <input className="input input--inline" type="search" />
+      <div>
+        <input
+          className="input input--brewery"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          type="text"
+        />
         <button
-          onClick={(e) => handleInput(e)}
-          className="button button--inline"
+          className="button button--brewery"
+          onClick={() => handleSearch(searchValue)}
         >
           Search
         </button>
-      </form>
+      </div>
       <div>
-        {dataSearch.length > 0 ? (
-          dataSearch.map((brewery: BreweryType) => {
+        {searchData.length > 0 ? (
+          searchData.map((brewery: BreweryType) => {
             return <div key={brewery.id}>{brewery.name}</div>;
           })
         ) : (
-          <div>Nema niti jedna pivovara za zadani parametar</div>
+          <div>
+            Ne postoji pivovara s imenom: {searchValue}, pokušajte s nekom
+            poznatijom markom.
+          </div>
         )}
       </div>
     </div>
