@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type BreweryType = {
   name: string;
@@ -12,6 +12,7 @@ const Breweries = () => {
   const [dataByCity, setDataByCity] = useState<BreweryType[]>([]);
   const [searchData, setSearchData] = useState<BreweryType[]>([]);
   const [searchValue, setSearchValue] = useState<string>("");
+  const [breweriesPage, setBreweriesPage] = useState<BreweryType[]>([]);
 
   const getBreweries = () => {
     fetch("https://api.openbrewerydb.org/v1/breweries")
@@ -48,6 +49,19 @@ const Breweries = () => {
       .then((jsonData) => {
         setSearchData(jsonData);
         console.log("Search result: ", jsonData);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const handlePage = (pageValue: number) => {
+    fetch(
+      `https://api.openbrewerydb.org/v1/breweries?page=${pageValue}&per_page=10`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((jsonData) => {
+        setBreweriesPage(jsonData);
       })
       .catch((error) => console.error(error));
   };
@@ -107,6 +121,40 @@ const Breweries = () => {
             poznatijom markom.
           </div>
         )}
+      </div>
+      <hr />
+      <h1>Breweries Pagination</h1>
+      <div>
+        {breweriesPage.length > 0 ? (
+          breweriesPage.map((brewery: BreweryType) => {
+            return <div key={brewery.id}>{brewery.name}</div>;
+          })
+        ) : (
+          <div>Na ovoj stranici se ne mogu ispisati pivovare.</div>
+        )}
+        <hr />
+        <div className="pagination">
+          <div className="pagination__item">&laquo;</div>
+          <div onClick={() => handlePage(1)} className="pagination__item">
+            1
+          </div>
+          <div onClick={() => handlePage(2)} className="pagination__item">
+            2
+          </div>
+          <div onClick={() => handlePage(3)} className="pagination__item">
+            3
+          </div>
+          <div onClick={() => handlePage(4)} className="pagination__item">
+            4
+          </div>
+          <div onClick={() => handlePage(5)} className="pagination__item">
+            5
+          </div>
+          <div onClick={() => handlePage(6)} className="pagination__item">
+            6
+          </div>
+          <div className="pagination__item">&raquo;</div>
+        </div>
       </div>
     </div>
   );
