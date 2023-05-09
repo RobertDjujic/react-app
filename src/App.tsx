@@ -14,6 +14,7 @@ import Vjezba2804 from "./pages/vjezba-2804";
 import Vjezba3004 from "./pages/vjezba-3004";
 import Vjezba0305 from "./pages/vjezba-0305";
 import Breweries from "./pages/breweries";
+import Pokemons from "./pages/pokemons";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const App = () => {
     {
       path: "/breweries",
       element: <Breweries />,
+    },
+    {
+      path: "/pokemons",
+      element: <Pokemons />,
     },
   ]);
   return (

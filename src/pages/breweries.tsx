@@ -13,6 +13,8 @@ const Breweries = () => {
   const [searchData, setSearchData] = useState<BreweryType[]>([]);
   const [searchValue, setSearchValue] = useState<string>("");
   const [breweriesPage, setBreweriesPage] = useState<BreweryType[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage] = useState<number>(10);
 
   const getBreweries = () => {
     fetch("https://api.openbrewerydb.org/v1/breweries")
@@ -53,10 +55,8 @@ const Breweries = () => {
       .catch((error) => console.error(error));
   };
 
-  const handlePage = (pageValue: number) => {
-    fetch(
-      `https://api.openbrewerydb.org/v1/breweries?page=${pageValue}&per_page=10`
-    )
+  const handlePage = () => {
+    fetch(`https://api.openbrewerydb.org/v1/breweries`)
       .then((response) => {
         return response.json();
       })
@@ -66,9 +66,24 @@ const Breweries = () => {
       .catch((error) => console.error(error));
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  const handleClick = (event: any, pageNumber: number) => {
+    event.preventDefault();
+    setCurrentPage(pageNumber);
+  };
+
   useEffect(() => {
     getBreweries();
     getBreweryByCity("san_diego", 4);
+    handlePage();
   }, []);
 
   return (
@@ -124,38 +139,20 @@ const Breweries = () => {
       </div>
       <hr />
       <h1>Breweries Pagination</h1>
-      <div>
-        {breweriesPage.length > 0 ? (
-          breweriesPage.map((brewery: BreweryType) => {
-            return <div key={brewery.id}>{brewery.name}</div>;
-          })
-        ) : (
-          <div>Na ovoj stranici se ne mogu ispisati pivovare.</div>
-        )}
-        <hr />
-        <div className="pagination">
-          <div className="pagination__item">&laquo;</div>
-          <div onClick={() => handlePage(1)} className="pagination__item">
-            1
-          </div>
-          <div onClick={() => handlePage(2)} className="pagination__item">
-            2
-          </div>
-          <div onClick={() => handlePage(3)} className="pagination__item">
-            3
-          </div>
-          <div onClick={() => handlePage(4)} className="pagination__item">
-            4
-          </div>
-          <div onClick={() => handlePage(5)} className="pagination__item">
-            5
-          </div>
-          <div onClick={() => handlePage(6)} className="pagination__item">
-            6
-          </div>
-          <div className="pagination__item">&raquo;</div>
-        </div>
-      </div>
+      <ul>
+        {currentItems.map((brewery: BreweryType) => (
+          <li key={brewery.id}>{brewery.name}</li>
+        ))}
+      </ul>
+      <ul id="page-numbers">
+        {pageNumbers.map((pageNumber) => (
+          <li key={pageNumber}>
+            <a href="#" onClick={(e) => handleClick(e, pageNumber)}>
+              {pageNumber}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
