@@ -40,6 +40,10 @@
     }
   }
 
+  &--inline {
+    display: inline-flex;
+  }
+
   &:hover {
     transform: scale(1.1);
   }

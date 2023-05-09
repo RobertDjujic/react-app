@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 
 type BreweryType = {
   name: string;
@@ -37,9 +37,12 @@ const Breweries = () => {
       .catch((error) => console.error(error));
   };
 
+  let beer: string;
+
   const searchBreweries = () => {
+    let beerName = beer;
     fetch(
-      "https://api.openbrewerydb.org/v1/breweries/search?query=heineken&per_page=3"
+      `https://api.openbrewerydb.org/v1/breweries/search?query=${beerName}&per_page=3`
     )
       .then((response) => {
         return response.json();
@@ -57,6 +60,13 @@ const Breweries = () => {
     searchBreweries();
   }, []);
 
+  const handleInput = (e: MouseEvent) => {
+    e.preventDefault();
+    let input = document.querySelector(".input") as HTMLInputElement;
+    beer = input.value;
+    searchBreweries();
+  };
+
   return (
     <div className="container">
       <h1>Breweries</h1>
@@ -69,7 +79,8 @@ const Breweries = () => {
           <div>Nema niti jedna pivovara za zadani parametar</div>
         )}
       </div>
-      <h1>Breweries by city</h1>
+      <hr />
+      <h1>Breweries by City</h1>
       <div>
         {dataByCity.length > 0 ? (
           dataByCity.map((brewery: BreweryType) => {
@@ -79,7 +90,17 @@ const Breweries = () => {
           <div>Nema niti jedna pivovara za zadani parametar</div>
         )}
       </div>
-      <h1>Breweries search</h1>
+      <hr />
+      <h1>Search Breweries</h1>
+      <form action="">
+        <input className="input input--inline" type="search" />
+        <button
+          onClick={(e) => handleInput(e)}
+          className="button button--inline"
+        >
+          Search
+        </button>
+      </form>
       <div>
         {dataSearch.length > 0 ? (
           dataSearch.map((brewery: BreweryType) => {
