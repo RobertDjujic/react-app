@@ -26,6 +26,9 @@ const Home = () => {
           <li>
             <a href="/pokemons">Pokemons</a>
           </li>
+          <li>
+            <a href="/europe">Europe</a>
+          </li>
         </ul>
       </div>
     </div>
