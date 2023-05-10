@@ -89,6 +89,7 @@ const Breweries = () => {
   return (
     <div className="container">
       <h1>Breweries</h1>
+      <hr />
       <div>
         {data.length > 0 ? (
           data.map((brewery: BreweryType) => {
@@ -98,8 +99,8 @@ const Breweries = () => {
           <div>Nema niti jedna pivovara za zadani parametar.</div>
         )}
       </div>
-      <hr />
       <h1>Breweries by City</h1>
+      <hr />
       <div>
         {dataByCity.length > 0 ? (
           dataByCity.map((brewery: BreweryType) => {
@@ -109,8 +110,8 @@ const Breweries = () => {
           <div>Nema niti jedna pivovara za zadani parametar.</div>
         )}
       </div>
-      <hr />
       <h1>Search Breweries</h1>
+      <hr />
       <div>
         <input
           className="input input--brewery"
@@ -137,8 +138,8 @@ const Breweries = () => {
           </div>
         )}
       </div>
-      <hr />
       <h1>Breweries Pagination</h1>
+      <hr />
       <ul>
         {currentItems.map((brewery: BreweryType) => (
           <li key={brewery.id}>{brewery.name}</li>
