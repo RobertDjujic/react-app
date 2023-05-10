@@ -28,7 +28,6 @@ const Pokemons = () => {
       })
       .then((data) => {
         setBerryData(data.results);
-        console.log(data.results);
       })
       .catch((err) => console.error(err));
   };
@@ -40,7 +39,6 @@ const Pokemons = () => {
       })
       .then((data) => {
         setFlag(data[0].flags.png);
-        console.log(data[0].flags.png);
       })
       .catch((err) => console.error(err));
   };
@@ -70,7 +68,7 @@ const Pokemons = () => {
         })}
       </div> */}
       <h1>Flag</h1>
-      <img src={flag} alt="Flag of Estonia" />
+      <img src={flag} alt="A country flag" />
     </div>
   );
 };
