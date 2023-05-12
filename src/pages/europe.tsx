@@ -46,7 +46,7 @@ const Europe = () => {
     <div className="container">
       <h1>Europe</h1>
       <div>
-        <table className="table--europe">
+        <table className="table--countries">
           <thead>
             <tr>
               <th>Name</th>

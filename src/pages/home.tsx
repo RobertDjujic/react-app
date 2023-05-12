@@ -29,6 +29,9 @@ const Home = () => {
           <li>
             <a href="/europe">Europe</a>
           </li>
+          <li>
+            <a href="/africa">Africa</a>
+          </li>
         </ul>
       </div>
     </div>

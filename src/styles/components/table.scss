@@ -2,7 +2,7 @@
   border: 1px solid $black;
   border-collapse: collapse;
 
-  &--europe {
+  &--countries {
     border-collapse: collapse;
     width: 100%;
 
@@ -22,6 +22,17 @@
 
     &__flag {
       width: 3rem;
+    }
+
+    &__links {
+      color: $pastelPurple;
+      text-decoration: none;
+      transition: all 250ms ease;
+
+      &:hover {
+        border-bottom: 1px solid $purple;
+        color: $purple;
+      }
     }
   }
 

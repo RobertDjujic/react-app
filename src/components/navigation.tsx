@@ -8,6 +8,9 @@ const Navigation = () => {
         <a className="nav__item" href="/teorem">
           Teorem
         </a>
+        <a className="nav__item" href="/chat">
+          Chat App
+        </a>
       </nav>
     </div>
   );
