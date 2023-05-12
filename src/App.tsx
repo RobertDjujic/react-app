@@ -12,13 +12,11 @@ import Petlje from "./pages/petlje";
 import Vjezba2604 from "./pages/vjezba-2604";
 import Vjezba2804 from "./pages/vjezba-2804";
 import Vjezba3004 from "./pages/vjezba-3004";
-import Vjezba0305 from "./pages/vjezba-0305";
 import Breweries from "./pages/breweries";
-import Pokemons from "./pages/pokemons";
 import Europe from "./pages/europe";
-import EuropeCountry from "./pages/europe-country";
-import Africa from "./pages/africa";
 import Chat from "./pages/chat";
+import Pokemon from "./pages/pokemon";
+import Region from "./pages/region";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -63,28 +61,20 @@ const App = () => {
       element: <Vjezba3004 />,
     },
     {
-      path: "/vjezba-0305",
-      element: <Vjezba0305 />,
-    },
-    {
       path: "/breweries",
       element: <Breweries />,
     },
     {
-      path: "/pokemons",
-      element: <Pokemons />,
+      path: "/pokemon",
+      element: <Pokemon />,
     },
     {
       path: "/europe",
       element: <Europe />,
     },
     {
-      path: "/europe/:countryId",
-      element: <EuropeCountry />,
-    },
-    {
-      path: "/africa",
-      element: <Africa />,
+      path: "/region",
+      element: <Region />,
     },
     {
       path: "/chat",

@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LeftSide from "../assets/left-side";
 import PopulationIcon from "../assets/population-icon";
 import RightSide from "../assets/right-side";
 
-type AfricaType = {
-  name: AfricaNameType;
-  maps: AfricaMapsType;
+type CountryType = {
+  name: CountryNameType;
+  maps: CountryMapType;
   population: number;
   borders: string[];
-  car: AfricaCarType;
+  car: CountryCarType;
 };
 
-type AfricaNameType = {
+type CountryNameType = {
   common: string;
   nativeName: NativeNameType;
   official: string;
@@ -24,54 +24,51 @@ type NativeNameType = {
   };
 };
 
-type AfricaMapsType = {
+type CountryMapType = {
   googleMaps: string;
   openStreetMaps: string;
 };
 
-type AfricaCarType = {
+type CountryCarType = {
   side: string;
   signs: string[];
 };
 
-const Africa = () => {
-  const [africaData, setAfricaData] = useState<AfricaType[]>([]);
+const Region = () => {
+  const [regionData, setRegionData] = useState<CountryType[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
 
-  const getAfrica = (regionName: string) => {
+  const getRegion = (regionName: string) => {
     fetch(`https://restcountries.com/v3.1/region/${regionName.toLowerCase()}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setAfricaData(data);
+        setRegionData(data);
       })
       .catch((err) => console.error(err));
   };
 
-  const checkSide = (carSide: string) => {
-    if (carSide == "left") {
-      return <LeftSide />;
-    }
-    if (carSide == "right") {
+  const checkSide = (side: string) => {
+    if (side == "right") {
       return <RightSide />;
+    } else {
+      return <LeftSide />;
     }
   };
 
-  useEffect(() => {});
-
   return (
     <div className="container">
-      <h1>Africa</h1>
+      <h1>Countries by Region</h1>
       <div>
         <input
-          className="input input--brewery"
+          className="input input--inline"
           type="text"
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button
-          className="button button--brewery"
-          onClick={() => getAfrica(inputValue)}
+          className="button button--inline"
+          onClick={() => getRegion(inputValue)}
         >
           Set Region
         </button>
@@ -88,8 +85,8 @@ const Africa = () => {
             </tr>
           </thead>
           <tbody>
-            {africaData.length > 0 ? (
-              africaData.map((country: AfricaType) => {
+            {regionData.length > 0 ? (
+              regionData.map((country: CountryType) => {
                 return (
                   <tr>
                     <td>
@@ -151,4 +148,4 @@ const Africa = () => {
   );
 };
 
-export default Africa;
+export default Region;

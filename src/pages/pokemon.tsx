@@ -6,14 +6,14 @@ type PokemonType = {
   url: string;
 };
 
-type PokemonAbilityNames = {
+type PokemonAbilityNameType = {
   name: string;
 };
 
 type PokemonAbilityType = {
   name: string;
   id: number;
-  names: PokemonAbilityNames[];
+  names: PokemonAbilityNameType[];
 };
 
 type BerryType = {
@@ -21,12 +21,12 @@ type BerryType = {
   url: string;
 };
 
-const Pokemons = () => {
+const Pokemon = () => {
   const [pokemonData, setPokemonData] = useState<PokemonType>();
   const [pokemonAbility, setPokemonAbility] = useState<PokemonAbilityType>();
   const [searchValue, setSearchValue] = useState<string>("");
   const [berryData, setBerryData] = useState<BerryType[]>([]);
-  const [flag, setFlag] = useState<string>("");
+  // const [flag, setFlag] = useState<string>("");
 
   const getPokemonAbility = (id: number) => {
     fetch(`https://pokeapi.co/api/v2/ability/${id}`)
@@ -64,39 +64,38 @@ const Pokemons = () => {
       .catch((err) => console.error(err));
   };
 
-  const getCapitalCity = () => {
-    fetch("https://restcountries.com/v3.1/capital/zagreb")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setFlag(data[0].flags.png);
-      })
-      .catch((err) => console.error(err));
-  };
+  // const getCapitalCity = () => {
+  //   fetch("https://restcountries.com/v3.1/capital/zagreb")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setFlag(data[0].flags.png);
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
   useEffect(() => {
     getBerries();
-    getCapitalCity();
   }, []);
 
   return (
     <div className="container">
-      <h1 className="pokemons__title">Search Pokemon Colors!</h1>
-      <div className="pokemons__header">
+      <h1 className="pokemon__title">Search Pokemon Abilities</h1>
+      <div className="pokemon__header">
         <input
-          className="pokemons__input"
+          className="pokemon__input"
           type="text"
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <button
-          className="pokemons__btn"
+          className="pokemon__btn"
           onClick={() => searchPokemon(searchValue)}
         >
-          Find Pokemon color
+          Find Pokemon ability
         </button>
       </div>
-      <div className="pokemons__color-box">
+      <div className="pokemon__color-box">
         {pokemonAbility &&
           pokemonAbility.names.map((name) => {
             return <div>{name.name}</div>;
@@ -113,10 +112,8 @@ const Pokemons = () => {
           );
         })}
       </div> */}
-      <h1>Flag</h1>
-      <img src={flag} alt="A country flag" />
     </div>
   );
 };
 
-export default Pokemons;
+export default Pokemon;

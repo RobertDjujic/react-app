@@ -114,13 +114,13 @@ const Breweries = () => {
       <hr />
       <div>
         <input
-          className="input input--brewery"
+          className="input input--inline"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           type="text"
         />
         <button
-          className="button button--brewery"
+          className="button button--inline"
           onClick={() => handleSearch(searchValue)}
         >
           Search
@@ -145,10 +145,14 @@ const Breweries = () => {
           <li key={brewery.id}>{brewery.name}</li>
         ))}
       </ul>
-      <ul id="page-numbers">
+      <ul className="pagination">
         {pageNumbers.map((pageNumber) => (
-          <li key={pageNumber}>
-            <a href="#" onClick={(e) => handleClick(e, pageNumber)}>
+          <li className="pagination__item list--brewery" key={pageNumber}>
+            <a
+              className="pagination__item__link"
+              href="#"
+              onClick={(e) => handleClick(e, pageNumber)}
+            >
               {pageNumber}
             </a>
           </li>

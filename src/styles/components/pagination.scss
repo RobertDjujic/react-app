@@ -26,5 +26,17 @@
       border-bottom-right-radius: 0.25rem;
       margin-right: 0;
     }
+
+    &__link {
+      color: $purple;
+      text-decoration: none;
+      transition: all 250ms ease;
+    }
+  }
+
+  .list {
+    &--brewery {
+      list-style: none;
+    }
   }
 }

@@ -252,7 +252,6 @@ const Vjezba3004 = () => {
   return (
     <div className="container">
       <h1>Vježba 3004</h1>
-      <hr />
     </div>
   );
 };

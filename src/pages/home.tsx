@@ -6,7 +6,19 @@ const Home = () => {
         <h2>Vježbe</h2>
         <ul>
           <li>
+            <a href="/breweries">Breweries</a>
+          </li>
+          <li>
+            <a href="/europe">Europe</a>
+          </li>
+          <li>
             <a href="/petlje">Petlje</a>
+          </li>
+          <li>
+            <a href="/pokemon">Pokemon</a>
+          </li>
+          <li>
+            <a href="/region">Region</a>
           </li>
           <li>
             <a href="/varijable">Varijable</a>
@@ -16,21 +28,6 @@ const Home = () => {
           </li>
           <li>
             <a href="/vjezba-2804">Vježba 2804</a>
-          </li>
-          <li>
-            <a href="/vjezba-0305">Vježba 0305</a>
-          </li>
-          <li>
-            <a href="/breweries">Breweries</a>
-          </li>
-          <li>
-            <a href="/pokemons">Pokemons</a>
-          </li>
-          <li>
-            <a href="/europe">Europe</a>
-          </li>
-          <li>
-            <a href="/africa">Africa</a>
           </li>
         </ul>
       </div>

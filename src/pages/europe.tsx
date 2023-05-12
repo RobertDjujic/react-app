@@ -60,13 +60,13 @@ const Europe = () => {
               return (
                 <tr>
                   <td>
-                    <a href="#" target="_blank">
+                    <a href="#">
                       {country.name.common}, {country.name.official}
                     </a>
                   </td>
                   <td>
                     <img
-                      className="table--europe__flag"
+                      className="table--countries__flag"
                       src={country.flags.png}
                       alt="A flag of a country"
                     />
