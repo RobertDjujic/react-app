@@ -17,6 +17,7 @@ import Europe from "./pages/europe";
 import Chat from "./pages/chat";
 import Pokemon from "./pages/pokemon";
 import Region from "./pages/region";
+import Vjezba1505 from "./pages/vjezba-1505";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -79,6 +80,10 @@ const App = () => {
     {
       path: "/chat",
       element: <Chat />,
+    },
+    {
+      path: "/vjezba-1505",
+      element: <Vjezba1505 />,
     },
   ]);
   return (
