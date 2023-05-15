@@ -19,6 +19,9 @@ const Header = () => {
             <a className="header__nav__item" href="/ispit">
               CSS ispit
             </a>
+            <a className="header__nav__item" href="/chat">
+              JS ispit
+            </a>
           </nav>
           <div className="header__inis">R. Dj.</div>
         </div>
