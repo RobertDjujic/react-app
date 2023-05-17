@@ -72,15 +72,15 @@ const Vjezba1505 = () => {
       return [1, 1];
     } else {
       let sequence = [1, 1];
-      for (let i = 3; i <= n; i++) {
-        sequence.push(sequence[i] + sequence[i - 1]);
+      for (let i = 2; i <= n; i++) {
+        sequence.push(sequence[i - 1] + sequence[i - 2]);
       }
       return sequence;
     }
   };
 
   //10. Funkcjia filtrira sve parne brojeve iz array-a ispravi gresku
-  const filterEvenNumbers = (arr) => {
+  const filterEvenNumbers = (arr: number[]) => {
     return arr.filter((num) => {
       if (num % 2 === 0) {
         return num;
@@ -90,7 +90,6 @@ const Vjezba1505 = () => {
 
   useEffect(() => {
     //Ovdje možemo pokretati funkciju koju testiramo
-    console.log(fibonacciSequence(13));
   }, []);
   return <div className="container"></div>;
 };
