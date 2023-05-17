@@ -18,6 +18,7 @@ import Chat from "./pages/chat";
 import Pokemon from "./pages/pokemon";
 import Region from "./pages/region";
 import Vjezba1505 from "./pages/vjezba-1505";
+import TodoList from "./pages/to-do-list";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -84,6 +85,10 @@ const App = () => {
     {
       path: "/vjezba-1505",
       element: <Vjezba1505 />,
+    },
+    {
+      path: "/todo",
+      element: <TodoList />,
     },
   ]);
   return (
