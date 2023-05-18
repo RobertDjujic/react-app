@@ -2,9 +2,9 @@ import { useState } from "react";
 import Trash from "../assets/trash";
 
 type TodoType = {
+  done: boolean;
   id: number;
   label: string;
-  done: boolean;
 };
 
 const TodoList = () => {
@@ -12,10 +12,13 @@ const TodoList = () => {
   const [listItems, setListItems] = useState<TodoType[]>([]);
 
   const handleAdd = () => {
+    if (inputValue === "") {
+      return;
+    }
     const newListItem = {
+      done: false,
       id: listItems.length + 1,
       label: inputValue,
-      done: false,
     };
     const newList = [...listItems, newListItem];
     setListItems(newList);
@@ -23,7 +26,7 @@ const TodoList = () => {
   };
 
   const handleRemove = (id: number) => {
-    const newListItems = listItems.filter((todoItem) => todoItem.id !== id);
+    const newListItems = listItems.filter((listItem) => listItem.id !== id);
 
     setListItems(newListItems);
   };
@@ -40,38 +43,54 @@ const TodoList = () => {
 
   return (
     <div className="container">
-      <h1>To-do List</h1>
+      <h1>To-Do List</h1>
       <div className="to-do">
-        <div className="to-do__header">
-          <h1 className="to-do__header__item">Todo List</h1>
-          <h3 className="to-do__header__item">A Simple To-do List App</h3>
-        </div>
-        <div className="to-do__list">
-          {listItems.map((todoItem: TodoType) => {
+        <header className="to-do__header">
+          <h1 className="to-do__header__title">To-Do List</h1>
+          <h3 className="to-do__header__subtitle">A Simple To-Do List App</h3>
+        </header>
+        <main className="to-do__list">
+          {listItems.map((listItem: TodoType) => {
             return (
-              <div key={todoItem.id} className="to-do__list__item">
-                <div onClick={() => handleCheck(todoItem.id)}>
-                  {todoItem.label}
+              <div
+                className={`to-do__list__item ${
+                  listItem.done ? "finished" : ""
+                }`}
+                key={listItem.id}
+              >
+                <div
+                  className="to-do__list__item__label"
+                  onClick={() => handleCheck(listItem.id)}
+                >
+                  {listItem.label}
                 </div>
-                <button onClick={() => handleRemove(todoItem.id)}>
+                <button
+                  className="to-do__list__btn"
+                  onClick={() => handleRemove(listItem.id)}
+                >
                   <Trash />
                 </button>
               </div>
             );
           })}
-        </div>
+        </main>
         <div className="to-do__form">
           <label className="to-do__form__label" htmlFor="input">
-            New To-do
+            New To-Do Task
           </label>
           <input
             id="input"
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleAdd();
+              }
+            }}
             type="text"
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
           />
           <button className="to-do__form__btn" onClick={() => handleAdd()}>
-            Add To-do
+            Add Task
           </button>
         </div>
       </div>

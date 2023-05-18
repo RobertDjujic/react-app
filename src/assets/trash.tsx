@@ -1,13 +1,13 @@
 const Trash = () => {
   return (
     <svg
-      className="to-do__list__item__trash"
+      className="to-do__list__btn__icon"
+      fill="none"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
       width={24}
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
     >
       <path
         stroke-linecap="round"
