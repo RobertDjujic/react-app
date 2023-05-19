@@ -5,7 +5,7 @@ const Backspace = () => {
       stroke="currentColor"
       strokeWidth="1.5"
       viewBox="0 0 24 24"
-      width={20}
+      width={18}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
