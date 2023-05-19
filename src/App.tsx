@@ -19,6 +19,7 @@ import Pokemon from "./pages/pokemon";
 import Region from "./pages/region";
 import Vjezba1505 from "./pages/vjezba-1505";
 import TodoList from "./pages/to-do-list";
+import JsIspit from "./pages/js-ispit";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -89,6 +90,10 @@ const App = () => {
     {
       path: "/todo",
       element: <TodoList />,
+    },
+    {
+      path: "/jsispit",
+      element: <JsIspit />,
     },
   ]);
   return (

@@ -33,6 +33,7 @@ const Europe = () => {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         setEuropeData(data);
       })
       .catch((err) => console.error(err));

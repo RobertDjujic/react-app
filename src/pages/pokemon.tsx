@@ -59,6 +59,7 @@ const Pokemon = () => {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         setBerryData(data.results);
       })
       .catch((err) => console.error(err));
