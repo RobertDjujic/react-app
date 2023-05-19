@@ -18,7 +18,6 @@ const JsIspit = () => {
       })
       .then((data) => {
         setLoading(false);
-        console.log(data.results);
         setSongData(data.results);
       })
       .catch((err) => console.error(err));
