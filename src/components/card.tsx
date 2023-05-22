@@ -21,7 +21,7 @@ const Card = () => {
 
       <form className="card__form" action="">
         <label className="card__form__label" htmlFor="name">
-          Name
+          Name hereeeee!
         </label>
         <input
           className="card__form__input"
