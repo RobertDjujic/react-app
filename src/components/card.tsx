@@ -15,7 +15,7 @@ const Card = () => {
           <span className="card__google__logo">
             <GoogleLogo />
           </span>
-          Sign up with Google
+          Sign up with Google, do it!
         </button>
       </div>
 
