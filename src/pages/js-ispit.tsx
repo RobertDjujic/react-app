@@ -10,6 +10,7 @@ const JsIspit = () => {
   const [songData, setSongData] = useState<SongType[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const [loading, setLoading] = useState<boolean>();
+  const test = 5;
 
   const getSongs = (term: string) => {
     fetch(`https://itunes.apple.com/search?term=${term}&entity=song`)
