@@ -11,7 +11,7 @@ const Header = () => {
         <div className="header__actions">
           <nav className="header__nav">
             <a className="header__nav__item" href="/">
-              Početna
+              Početna :)
             </a>
             <a className="header__nav__item" href="/exe">
               Vježbe
