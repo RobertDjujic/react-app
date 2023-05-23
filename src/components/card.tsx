@@ -15,13 +15,13 @@ const Card = () => {
           <span className="card__google__logo">
             <GoogleLogo />
           </span>
-          Sign up with Google, do it!
+          Sign up with Google
         </button>
       </div>
 
       <form className="card__form" action="">
         <label className="card__form__label" htmlFor="name">
-          Name goes here
+          Name goes
         </label>
         <input
           className="card__form__input"
