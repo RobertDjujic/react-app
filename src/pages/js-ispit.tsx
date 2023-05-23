@@ -7,23 +7,31 @@ type SongType = {
 };
 
 const JsIspit = () => {
-  const [songData, setSongData] = useState<SongType[]>([]);
+  const [error, setError] = useState("");
+  const [songData, setSongData] = useState<SongType[] | null>(null);
   const [inputValue, setInputValue] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const getSongs = (term: string) => {
     fetch(`https://itunes.apple.com/search?term=${term}&entity=song`)
       .then((res) => {
-        return res.json();
+        if (res.ok) {
+          return res.json();
+        } else {
+          setError(res.statusText);
+          setSongData(null);
+        }
       })
       .then((data) => {
-        setLoading(false);
+        setError("");
         setSongData(data.results);
+        setLoading(false);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   };
-
-  useEffect(() => {}, []);
 
   return (
     <div className="container">
@@ -33,8 +41,8 @@ const JsIspit = () => {
           <input onChange={(e) => setInputValue(e.target.value)} type="text" />
           <button
             onClick={() => {
-              getSongs(inputValue);
               setLoading(true);
+              getSongs(inputValue);
             }}
           >
             Search
@@ -50,10 +58,10 @@ const JsIspit = () => {
           <tbody>
             {loading ? (
               "Loading..."
-            ) : songData.length > 0 ? (
-              songData.map((song: SongType) => {
+            ) : songData ? (
+              songData.map((song, index) => {
                 return (
-                  <tr key={song.trackId}>
+                  <tr key={index}>
                     <td>{song.artistName}</td>
                     <td>{song.trackName}</td>
                   </tr>
