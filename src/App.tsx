@@ -20,6 +20,7 @@ import Region from "./pages/region";
 import Vjezba1505 from "./pages/vjezba-1505";
 import TodoList from "./pages/to-do-list";
 import JsIspit from "./pages/js-ispit";
+import GameGenres from "./pages/game-genres";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -94,6 +95,10 @@ const App = () => {
     {
       path: "/jsispit",
       element: <JsIspit />,
+    },
+    {
+      path: "/game-genres",
+      element: <GameGenres />,
     },
   ]);
   return (
