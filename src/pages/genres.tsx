@@ -11,14 +11,15 @@ export type GenreType = {
   name: string;
 };
 
-type GameType = {
+export type GameType = {
   desc: string;
   img: string;
   name: string;
   price: number;
+  id: number;
 };
 
-const GameGenres = () => {
+const Genres = () => {
   const [modal, setModal] = useState<boolean>(false);
   const [activeGenre, setActiveGenre] = useState<GameType[] | null>(null);
   const [activeOrder, setActiveOrder] = useState<boolean>(false);
@@ -96,16 +97,25 @@ const GameGenres = () => {
             </div>
             <div>
               {activeGenre
-                ? activeGenre.map((game: GameType) => {
+                ? activeGenre.map((game: GameType, index) => {
                     return (
                       <div className="game-genres__modal__item">
-                        <div className="game-genres__modal__item__img">
-                          <img src={game.img} alt="An image of a game." />
+                        <div
+                          className="game-genres__modal__item__img"
+                          key={index}
+                        >
+                          <a href={`/genres/${game.name.toLocaleLowerCase()}`}>
+                            {" "}
+                            <img src={game.img} alt="An image of a game." />
+                          </a>
                         </div>
                         <div>
-                          <div className="game-genres__modal__item__name">
+                          <a
+                            className="game-genres__modal__item__name"
+                            href={`/genres/${game.id}`}
+                          >
                             {game.name}
-                          </div>
+                          </a>
                           <div className="game-genres__modal__item__desc">
                             {game.desc}
                           </div>
@@ -125,4 +135,4 @@ const GameGenres = () => {
   );
 };
 
-export default GameGenres;
+export default Genres;

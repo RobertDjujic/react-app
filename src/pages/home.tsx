@@ -12,7 +12,7 @@ const Home = () => {
             <a href="/europe">Europe</a>
           </li>
           <li>
-            <a href="/game-genres">Game Genres</a>
+            <a href="/genres">Genres</a>
           </li>
           <li>
             <a href="/petlje">Petlje</a>
