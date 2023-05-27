@@ -3,6 +3,7 @@ import { genres } from "../data/genres";
 import ArrowDown from "../assets/arrow-down-a-z-solid";
 import ArrowUp from "../assets/arrow-up-a-z-solid";
 import XMark from "../assets/x-mark";
+import { Link } from "react-router-dom";
 
 export type GenreType = {
   games: GameType[];
@@ -110,12 +111,12 @@ const Genres = () => {
                           </a>
                         </div>
                         <div>
-                          <a
+                          <Link
                             className="game-genres__modal__item__name"
-                            href={`/genres/${game.id}`}
+                            to={`/genres/${game.id}`}
                           >
                             {game.name}
-                          </a>
+                          </Link>
                           <div className="game-genres__modal__item__desc">
                             {game.desc}
                           </div>

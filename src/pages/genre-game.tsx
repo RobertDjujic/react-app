@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { genres } from "../data/genres";
-import { GameType, GenreType } from "./genres";
+import { GameType } from "./genres";
 
 const GenreGame = () => {
-  const { id } = useParams<{ id: string }>();
-  const [gameData, setGameData] = useState<GameType[] | null>(null);
-  const gameId = id ? parseInt(id, 10) : 0;
-  const game = gameData?.find((game: GameType) => game.id === gameId);
+  const { gameId } = useParams<{ gameId: string | undefined }>();
+  const [gameData, setGameData] = useState<GameType | null>(null);
 
-  const dfs = (genres: any, targetId: number) => {
+  const findGameById = (genres: any[], gameId: number): GameType | null => {
     for (const genre of genres) {
       if (genre.games) {
         for (const game of genre.games) {
-          if (game.id === targetId) {
+          if (game.id === gameId) {
             return game;
           }
+        }
+      }
+      if (genre.subgenres) {
+        const subgenreGame = findGameById(genre.subgenres, gameId);
+        if (subgenreGame) {
+          return subgenreGame;
         }
       }
     }
@@ -24,36 +28,25 @@ const GenreGame = () => {
   };
 
   useEffect(() => {
-    const game = dfs(genres, 8);
-    if (game) {
-      setGameData([game]);
-    } else {
-      setGameData(null);
-    }
-
-    const fetchGameData = async () => {
-      try {
-        const response = await fetch("http://localhost:5173/");
-        const data = await response.json();
-        setGameData(data);
-      } catch (error) {
-        console.error("Error fetching game data:", error);
+    if (gameId) {
+      const parsedGameId = parseInt(gameId, 10);
+      const game = findGameById(genres, parsedGameId);
+      if (game) {
+        setGameData(game);
+      } else {
+        setGameData(null);
       }
-    };
-
-    fetchGameData();
-  }, []);
+    }
+  }, [gameId]);
 
   return (
     <div className="container">
       <h1>Genre Game</h1>
-      <div>
-        {gameData
-          ? gameData.map((game: GameType) => {
-              return <div key={game.id}>{game.name}</div>;
-            })
-          : `No game with name ${gameId}`}
-      </div>
+      {gameData ? (
+        <div>{gameData.name}</div>
+      ) : (
+        <div>No game with ID {gameId}</div>
+      )}
     </div>
   );
 };
