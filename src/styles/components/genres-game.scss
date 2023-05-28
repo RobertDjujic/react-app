@@ -1,0 +1,86 @@
+.genres-game {
+  padding: 1rem 0;
+
+  &__title {
+    display: inline-block;
+    background-color: #2a475e80;
+    border-radius: 0.5rem;
+    color: $white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-left: 5.5rem;
+    margin-top: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+
+    &__img {
+      margin-right: 1rem;
+    }
+
+    &__text {
+      width: 30rem;
+
+      div:nth-child(2) {
+        margin-bottom: 1rem;
+      }
+
+      div:nth-child(3) {
+        border-bottom: 2px solid #396c88;
+      }
+
+      div:nth-child(4) {
+        display: inline-block;
+        background-color: #2a475e80;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        transition: all 250ms ease;
+
+        &:hover {
+          background-color: #2a475e;
+          color: $white;
+        }
+      }
+
+      &__desc {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        text-align: justify;
+
+        div {
+          border-bottom: 2px solid #396c88;
+          color: $white;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+        }
+      }
+
+      &__price {
+        display: inline-block;
+        background-color: $lightGreen;
+        border-radius: 0.5rem;
+        color: $black;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: all 250ms ease;
+
+        &:hover {
+          background-color: $darkGreen;
+        }
+      }
+
+      &__category {
+        border-bottom: 2px solid #396c88;
+        color: $white;
+        font-size: 1.125rem;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

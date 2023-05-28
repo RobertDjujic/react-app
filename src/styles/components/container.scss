@@ -31,4 +31,14 @@
       }
     }
   }
+
+  &--game {
+    background-color: #1b2838;
+    color: #acb2b8;
+    height: 100%;
+  }
+
+  &--game-inner {
+    background-color: #111a2480;
+  }
 }

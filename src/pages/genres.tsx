@@ -4,6 +4,7 @@ import ArrowDown from "../assets/arrow-down-a-z-solid";
 import ArrowUp from "../assets/arrow-up-a-z-solid";
 import XMark from "../assets/x-mark";
 import { Link } from "react-router-dom";
+import steamLogo from "./../assets/steam-logo-transparent.png";
 
 export type GenreType = {
   games: GameType[];
@@ -50,85 +51,85 @@ const Genres = () => {
   return (
     <>
       <div className={modal ? "overlay" : ""}></div>
-      <div className="container">
-        <h1>Game Genres</h1>
-        <div className="game-genres">
-          <div className="game-genres__item__grid">
-            {genres.map((genre: GenreType) => {
-              return (
-                <div
-                  className="game-genres__item"
-                  onClick={() => {
-                    findGames(genre.id);
-                    setModal(!modal);
-                  }}
-                >
-                  <img
-                    className="game-genres__item__img"
-                    src={genre.img}
-                    alt="An image representing a specific game genre."
-                  />
-                  <div className="game-genres__item__gradient"></div>
-                  <div className="game-genres__item__label">{genre.name}</div>
-                </div>
-              );
-            })}
+      <div className="container--game">
+        <div className="container">
+          <div className="genres">
+            <img
+              className="genres__steam-logo"
+              src={steamLogo}
+              alt="Logo of Steam"
+            />
+            <h1 className="genres__title">Steam Categories</h1>
+            <div className="genres__item__grid">
+              {genres.map((genre: GenreType) => {
+                return (
+                  <div
+                    className="genres__item"
+                    onClick={() => {
+                      findGames(genre.id);
+                      setModal(!modal);
+                    }}
+                  >
+                    <img
+                      className="genres__item__img"
+                      src={genre.img}
+                      alt="An image representing a specific game genre."
+                    />
+                    <div className="genres__item__gradient"></div>
+                    <div className="genres__item__label">{genre.name}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div className={modal ? "genres__modal" : "genres__modal hidden"}>
+          <div
+            className="genres__modal__close"
+            onClick={() => {
+              setModal(false);
+            }}
+          >
+            <XMark />
           </div>
           <div
-            className={
-              modal ? "game-genres__modal" : "game-genres__modal hidden"
-            }
+            className="genres__modal__order"
+            onClick={() => {
+              setActiveOrder(!activeOrder);
+              handleOrder();
+            }}
           >
-            <div
-              className="game-genres__modal__close"
-              onClick={() => {
-                setModal(false);
-              }}
-            >
-              <XMark />
-            </div>
-            <div
-              className="game-genres__modal__order"
-              onClick={() => {
-                setActiveOrder(!activeOrder);
-                handleOrder();
-              }}
-            >
-              {activeOrder ? <ArrowDown /> : <ArrowUp />}
-            </div>
-            <div>
-              {activeGenre
-                ? activeGenre.map((game: GameType, index) => {
-                    return (
-                      <div className="game-genres__modal__item">
-                        <div
-                          className="game-genres__modal__item__img"
-                          key={index}
-                        >
-                          <a href={`/genres/${game.name.toLocaleLowerCase()}`}>
-                            {" "}
-                            <img src={game.img} alt="An image of a game." />
-                          </a>
-                        </div>
-                        <div>
-                          <Link
-                            className="game-genres__modal__item__name"
-                            to={`/genres/${game.id}`}
-                          >
-                            {game.name}
-                          </Link>
-                          <div className="game-genres__modal__item__desc">
-                            {game.desc}
-                          </div>
-                          <span className="game-genres__modal__item__price">
-                            {`${game.price}€`}
-                          </span>
-                        </div>
+            {activeOrder ? <ArrowDown /> : <ArrowUp />}
+          </div>
+          <div>
+            {activeGenre
+              ? activeGenre.map((game: GameType, index) => {
+                  return (
+                    <div className="genres__modal__item">
+                      <div className="genres__modal__item__img" key={index}>
+                        <a href={`/genres/${game.name.toLocaleLowerCase()}`}>
+                          {" "}
+                          <img src={game.img} alt="An image of a game." />
+                        </a>
                       </div>
-                    );
-                  })
-                : "Nothing has been selected."}
-            </div>
+                      <div>
+                        <Link
+                          className="genres__modal__item__name"
+                          to={`/genres/${game.id}`}
+                        >
+                          {game.name}
+                        </Link>
+                        <div className="genres__modal__item__desc">
+                          {game.desc}
+                        </div>
+                        <span className="genres__modal__item__price">
+                          {`${game.price}€`}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })
+              : "Nothing has been selected."}
           </div>
         </div>
       </div>
