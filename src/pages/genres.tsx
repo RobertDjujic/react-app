@@ -51,13 +51,13 @@ const Genres = () => {
   return (
     <>
       <div className={modal ? "overlay" : ""}></div>
-      <div className="container--game">
+      <div className="container--genres">
         <div className="container">
           <div className="genres">
             <img
               className="genres__steam-logo"
               src={steamLogo}
-              alt="Logo of Steam"
+              alt="The Steam logo."
             />
             <h1 className="genres__title">Steam Categories</h1>
             <div className="genres__item__grid">
@@ -73,7 +73,7 @@ const Genres = () => {
                     <img
                       className="genres__item__img"
                       src={genre.img}
-                      alt="An image representing a specific game genre."
+                      alt={`The image for the ${genre.name} category.`}
                     />
                     <div className="genres__item__gradient"></div>
                     <div className="genres__item__label">{genre.name}</div>
@@ -107,10 +107,13 @@ const Genres = () => {
                   return (
                     <div className="genres__modal__item">
                       <div className="genres__modal__item__img" key={index}>
-                        <a href={`/genres/${game.name.toLocaleLowerCase()}`}>
+                        <Link to={`/genres/${game.id}`}>
                           {" "}
-                          <img src={game.img} alt="An image of a game." />
-                        </a>
+                          <img
+                            src={game.img}
+                            alt={`The front cover for ${game.name}`}
+                          />
+                        </Link>
                       </div>
                       <div>
                         <Link

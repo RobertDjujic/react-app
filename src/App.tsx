@@ -21,7 +21,7 @@ import Vjezba1505 from "./pages/vjezba-1505";
 import TodoList from "./pages/to-do-list";
 import JsIspit from "./pages/js-ispit";
 import Genres from "./pages/genres";
-import GenreGame from "./pages/genre-game";
+import GenreGame from "./pages/genres-game";
 
 const App = () => {
   const router = createBrowserRouter([

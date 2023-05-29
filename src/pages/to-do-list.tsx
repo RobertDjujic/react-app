@@ -82,7 +82,8 @@ const TodoList = () => {
             id="input"
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
                 handleAdd();
               }
             }}

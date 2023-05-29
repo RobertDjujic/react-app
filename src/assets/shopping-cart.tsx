@@ -1,12 +1,12 @@
 const ShoppingCart = () => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
       stroke="currentColor"
-      width={24}
+      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      width={20}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         strokeLinecap="round"
