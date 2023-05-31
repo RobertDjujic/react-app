@@ -1,0 +1,73 @@
+@keyframes alert-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 13rem, 0);
+  }
+}
+
+.bootstrap {
+  padding: 1rem;
+
+  &__alert {
+    display: block;
+    position: absolute;
+    top: -5rem;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    animation: alert-animation 2s ease forwards;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__dashboard {
+    &__cards {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      &__item {
+        background-color: lightgray;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 50%;
+
+        &.flex {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+
+        div:first-child {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &__number {
+          font-size: 4rem;
+          margin-left: 4rem;
+        }
+
+        &__text {
+          text-align: right;
+
+          div:first-child {
+            font-size: 2rem;
+          }
+
+          div:last-child {
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -23,6 +23,7 @@ import JsIspit from "./pages/js-ispit";
 import Genres from "./pages/genres";
 import GenreGame from "./pages/genres-game";
 import BootstrapExe from "./pages/bootstrap-exe";
+import Bootstrap from "./pages/boostrap";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -109,6 +110,10 @@ const App = () => {
     {
       path: "/bootstrap-exe",
       element: <BootstrapExe />,
+    },
+    {
+      path: "/bootstrap",
+      element: <Bootstrap />,
     },
   ]);
   return (

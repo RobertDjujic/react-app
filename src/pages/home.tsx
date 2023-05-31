@@ -6,7 +6,10 @@ const Home = () => {
         <h2>Vježbe</h2>
         <ul>
           <li>
-            <a href="/bootstrap-exe">React Bootstrap</a>
+            <a href="/bootstrap">Bootstrap</a>
+          </li>
+          <li>
+            <a href="/bootstrap-exe">Bootstrap Exercise</a>
           </li>
           <li>
             <a href="/breweries">Breweries</a>
@@ -23,6 +26,7 @@ const Home = () => {
           <li>
             <a href="/pokemon">Pokemon</a>
           </li>
+
           <li>
             <a href="/region">Region</a>
           </li>

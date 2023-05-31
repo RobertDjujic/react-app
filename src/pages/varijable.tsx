@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Table from "../components/table";
 
 type UserType = {
   name: string;
@@ -83,9 +82,7 @@ const Varijable = () => {
           Gitare: {obj.guitars.prva}, {obj.guitars.druga}, {obj.guitars.treca}
         </div>
         <hr />
-        <div>
-          <Table />
-        </div>
+        <div></div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import { GenreType } from "./genres";
 const BootstrapExe = () => {
   return (
     <div className="container">
-      <h1>Bootstrap React</h1>
+      <h1>React Boostrap</h1>
       <Accordion defaultActiveKey="0">
         {genres.map((genre: GenreType) => {
           return (
