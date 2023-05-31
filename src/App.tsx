@@ -22,6 +22,7 @@ import TodoList from "./pages/to-do-list";
 import JsIspit from "./pages/js-ispit";
 import Genres from "./pages/genres";
 import GenreGame from "./pages/genres-game";
+import BootstrapExe from "./pages/bootstrap-exe";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -104,6 +105,10 @@ const App = () => {
     {
       path: "/genres/:gameId",
       element: <GenreGame />,
+    },
+    {
+      path: "/bootstrap-exe",
+      element: <BootstrapExe />,
     },
   ]);
   return (

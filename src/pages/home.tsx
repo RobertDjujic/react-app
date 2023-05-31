@@ -6,6 +6,9 @@ const Home = () => {
         <h2>Vježbe</h2>
         <ul>
           <li>
+            <a href="/bootstrap-exe">React Bootstrap</a>
+          </li>
+          <li>
             <a href="/breweries">Breweries</a>
           </li>
           <li>
