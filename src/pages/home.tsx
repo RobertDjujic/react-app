@@ -9,9 +9,6 @@ const Home = () => {
             <a href="/bootstrap">Bootstrap</a>
           </li>
           <li>
-            <a href="/bootstrap-exe">Bootstrap Exercise</a>
-          </li>
-          <li>
             <a href="/breweries">Breweries</a>
           </li>
           <li>

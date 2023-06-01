@@ -3,7 +3,7 @@ import Navigation from "./components/navigation";
 import "./styles/styles.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Exe from "./pages/exe";
-import Ispit from "./pages/ispit";
+import Ispit from "./pages/css-ispit";
 import Home from "./pages/home";
 import Mlinar from "./pages/mlinar";
 import Teorem from "./pages/teorem";
@@ -22,7 +22,6 @@ import TodoList from "./pages/to-do-list";
 import JsIspit from "./pages/js-ispit";
 import Genres from "./pages/genres";
 import GenreGame from "./pages/genres-game";
-import BootstrapExe from "./pages/bootstrap-exe";
 import Bootstrap from "./pages/boostrap";
 
 const App = () => {
@@ -106,10 +105,6 @@ const App = () => {
     {
       path: "/genres/:gameId",
       element: <GenreGame />,
-    },
-    {
-      path: "/bootstrap-exe",
-      element: <BootstrapExe />,
     },
     {
       path: "/bootstrap",

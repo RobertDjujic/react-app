@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Alert, Button, ProgressBar, Tab, Table, Tabs } from "react-bootstrap";
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import { chartData } from "../data/chart";
@@ -45,7 +45,7 @@ const Bootstrap = () => {
             onSelect={(k) => setKey(k)}
             className="mb-3"
           >
-            <Tab eventKey="home" title="Home">
+            <Tab eventKey="home" title="Dashboard">
               <div className="bootstrap__dashboard">
                 <div className="bootstrap__dashboard__cards">
                   <div className="bootstrap__dashboard__cards__item flex">
@@ -100,7 +100,7 @@ const Bootstrap = () => {
                 </Table>
               </div>
             </Tab>
-            <Tab eventKey="profile" title="Profile"></Tab>
+            <Tab eventKey="profile" title="Game"></Tab>
           </Tabs>
         </div>
       </div>

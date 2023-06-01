@@ -47,7 +47,7 @@ const Europe = () => {
     <div className="container">
       <h1>Europe</h1>
       <div>
-        <table className="table--countries">
+        <table className="my-table--countries">
           <thead>
             <tr>
               <th>Name</th>
@@ -67,7 +67,7 @@ const Europe = () => {
                   </td>
                   <td>
                     <img
-                      className="table--countries__flag"
+                      className="my-table--countries__flag"
                       src={country.flags.png}
                       alt="A flag of a country"
                     />

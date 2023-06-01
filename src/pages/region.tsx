@@ -74,7 +74,7 @@ const Region = () => {
         </button>
       </div>
       <div>
-        <table className="table--countries">
+        <table className="my-table--countries">
           <thead>
             <tr>
               <th>Name</th>
@@ -104,14 +104,14 @@ const Region = () => {
                     </td>
                     <td>
                       <a
-                        className="table--countries__links"
+                        className="my-table--countries__links"
                         href={country.maps.googleMaps}
                       >
                         Google Maps
                       </a>
                       {", "}
                       <a
-                        className="table--countries__links"
+                        className="my-table--countries__links"
                         href={country.maps.openStreetMaps}
                       >
                         Open Street Maps
