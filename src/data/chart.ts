@@ -1,4 +1,4 @@
-import { ChartType } from "../pages/boostrap";
+import { ChartType } from "../pages/bootstrap";
 
 export const chartData: ChartType[] = [
   { name: "Page A", uv: 400, pv: 2400, amt: 2400 },

@@ -4,7 +4,7 @@
 
 //components
 @import "./components/banner.scss";
-@import "./components/boostrap.scss";
+@import "./components/bootstrap.scss";
 @import "./components/box.scss";
 @import "./components/button.scss";
 @import "./components/checkbox.scss";
@@ -33,5 +33,5 @@
 @import "./components/validation.scss";
 @import "./components/mlinar.scss";
 
-//bootstrap
+//bootstrap (zakomentirat nakon što prestanemo radit s boostrapom)
 @import "node_modules/bootstrap/scss/bootstrap";

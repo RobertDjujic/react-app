@@ -22,7 +22,7 @@ import TodoList from "./pages/to-do-list";
 import JsIspit from "./pages/js-ispit";
 import Genres from "./pages/genres";
 import GenreGame from "./pages/genres-game";
-import Bootstrap from "./pages/boostrap";
+import Bootstrap from "./pages/bootstrap";
 
 const App = () => {
   const router = createBrowserRouter([

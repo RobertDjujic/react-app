@@ -70,4 +70,46 @@
       }
     }
   }
+
+  &__game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__pole {
+      position: absolute;
+      top: 0;
+      right: 4rem;
+      border-left: 2px dashed black;
+      height: 30rem;
+      width: 10rem;
+
+      &__banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid lightblue;
+        color: $white;
+        font-size: 1.75rem;
+        padding: 1rem 0;
+        background-color: $lightGreen;
+
+        width: 100%;
+      }
+    }
+
+    &__lane {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
 }
