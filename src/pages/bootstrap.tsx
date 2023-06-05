@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Alert, Button, ProgressBar, Tab, Table, Tabs } from "react-bootstrap";
+// import { Alert, Button, ProgressBar, Tab, Table, Tabs } from "react-bootstrap";
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import { chartData } from "../data/chart";
 import { frontendRazred } from "../data/class";
@@ -108,16 +108,16 @@ const Bootstrap = () => {
             isAlertVisible ? "bootstrap__alert" : "bootstrap__alert--hidden"
           }
         >
-          <Alert variant="danger">This is a danger alert!</Alert>
+          {/* <Alert variant="danger">This is a danger alert!</Alert> */}
         </div>
         <header className="bootstrap__header">
           <h1>Hello Bootstrap!</h1>
-          <Button variant="outline-danger" onClick={() => alertAnimation()}>
+          {/* <Button variant="outline-danger" onClick={() => alertAnimation()}>
             Click Me
-          </Button>
+          </Button> */}
         </header>
         <div className="bootstrap__tabs">
-          <Tabs
+          {/* <Tabs
             id="controlled-tab-example"
             activeKey={key}
             onSelect={(k) => setKey(k)}
@@ -211,7 +211,7 @@ const Bootstrap = () => {
                 </div>
               </div>
             </Tab>
-          </Tabs>
+          </Tabs> */}
         </div>
       </div>
     </div>

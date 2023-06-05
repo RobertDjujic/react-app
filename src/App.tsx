@@ -23,6 +23,7 @@ import JsIspit from "./pages/js-ispit";
 import Genres from "./pages/genres";
 import Bootstrap from "./pages/bootstrap";
 import GenresGame from "./pages/genres-game";
+import Instagram from "./pages/instagram/instagram";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -109,6 +110,10 @@ const App = () => {
     {
       path: "/bootstrap",
       element: <Bootstrap />,
+    },
+    {
+      path: "/instagram",
+      element: <Instagram />,
     },
   ]);
   return (
