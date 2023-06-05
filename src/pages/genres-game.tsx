@@ -1,24 +1,30 @@
+import { GameType, GenreType } from "./genres";
+import { genres } from "../data/genres";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { genres } from "../data/genres";
-import { GameType } from "./genres";
 import ShoppingCart from "../assets/shopping-cart";
+import StarRating from "../components/star-rating";
 import ThumbsUp from "../assets/thumbs-up";
 
 type ReviewType = {
   id: number;
   name: string;
+  rating: number;
   text: string;
 };
 
-const GenreGame = () => {
+const GenresGame = () => {
   const { gameId } = useParams<{ gameId: string | undefined }>();
   const [gameData, setGameData] = useState<GameType | null>(null);
-  const [textValue, setTextValue] = useState<string>("");
-  const [nameValue, setNameValue] = useState<string>("");
   const [gameReviews, setGameReviews] = useState<ReviewType[]>([]);
+  const [nameValue, setNameValue] = useState<string>("");
+  const [textValue, setTextValue] = useState<string>("");
+  const [rating, setRating] = useState<number>(0);
 
-  const findGameById = (genres: any[], gameId: number): GameType | null => {
+  const findGameById = (
+    genres: GenreType[],
+    gameId: number
+  ): GameType | null => {
     for (const genre of genres) {
       if (genre.games) {
         for (const game of genre.games) {
@@ -27,30 +33,21 @@ const GenreGame = () => {
           }
         }
       }
-      if (genre.subgenres) {
-        const subgenreGame = findGameById(genre.subgenres, gameId);
-        if (subgenreGame) {
-          return subgenreGame;
-        }
-      }
     }
 
     return null;
   };
 
-  const findGenreById = (genres: any[], gameId: number): string | null => {
+  const findGenreById = (
+    genres: GenreType[],
+    gameId: number
+  ): string | null => {
     for (const genre of genres) {
       if (genre.games) {
         for (const game of genre.games) {
           if (game.id === gameId) {
             return genre.name;
           }
-        }
-      }
-      if (genre.subgenres) {
-        const subgenreGenre = findGenreById(genre.subgenres, gameId);
-        if (subgenreGenre) {
-          return subgenreGenre;
         }
       }
     }
@@ -60,7 +57,7 @@ const GenreGame = () => {
 
   const handleAdd = () => {
     if (nameValue === "") {
-      alert("You must enter-in a username before posting a review.");
+      alert("You must enter a username before posting a review.");
       return;
     }
     if (textValue === "") {
@@ -71,11 +68,17 @@ const GenreGame = () => {
       id: gameReviews.length + 1,
       name: nameValue,
       text: textValue,
+      rating: rating,
     };
     const newReviews = [...gameReviews, newGameReview];
     setGameReviews(newReviews);
     setTextValue("");
     setNameValue("");
+    setRating(0);
+  };
+
+  const handleRatingChange = (newRating: number) => {
+    setRating(newRating);
   };
 
   useEffect(() => {
@@ -110,13 +113,13 @@ const GenreGame = () => {
                     <div>About this game</div>
                     {gameData.desc}
                   </div>
-                  <div>
+                  <div className="genres-game__info__text__price__wrap">
                     <div className="genres-game__info__text__price">
                       {`${gameData.price}€`}
                       <ShoppingCart />
                     </div>
                   </div>
-                  <div>
+                  <div className="genres-game__info__text__category__wrap">
                     <a
                       className="genres-game__info__text__category"
                       href="/genres"
@@ -124,7 +127,9 @@ const GenreGame = () => {
                       Category
                     </a>
                   </div>
-                  <div>{genre && <div>{genre}</div>}</div>
+                  <div className="genres-game__info__text__tag">
+                    {genre && <div>{genre}</div>}
+                  </div>
                 </div>
               </main>
             </>
@@ -153,6 +158,7 @@ const GenreGame = () => {
                 type="text"
                 value={nameValue}
               />
+              <StarRating maxStars={5} onChange={handleRatingChange} />
               <textarea
                 className="genres-game__review__form__text"
                 id="reviewContent"
@@ -177,21 +183,27 @@ const GenreGame = () => {
             <div className="genres-game__review__list">
               <div className="genres-game__review__list__title">Reviews:</div>
               <div className="genres-game__review__list__item__wrap">
-                {gameReviews.map((review: ReviewType) => {
-                  return (
-                    <>
-                      <div className="genres-game__review__list__name">
-                        Posted by: <span>{review.name}</span>
-                      </div>
-                      <div
-                        className="genres-game__review__list__item"
-                        key={review.id}
-                      >
-                        <em>{`"${review.text}"`}</em>
-                      </div>
-                    </>
-                  );
-                })}
+                {gameReviews.map((review: ReviewType) => (
+                  <div
+                    className="genres-game__review__list__item"
+                    key={review.id}
+                  >
+                    <div className="genres-game__review__list__name">
+                      Posted by: <span>{review.name}</span>
+                    </div>
+                    <div className="genres-game__review__list__rating">
+                      {[...Array(review.rating)].map((_, index) => (
+                        <span
+                          key={index}
+                          className="genres-game__review__list__rating__star"
+                        >
+                          &#9733;
+                        </span>
+                      ))}
+                    </div>
+                    <em>{`"${review.text}"`}</em>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -201,4 +213,4 @@ const GenreGame = () => {
   );
 };
 
-export default GenreGame;
+export default GenresGame;

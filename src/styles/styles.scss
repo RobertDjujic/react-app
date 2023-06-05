@@ -26,6 +26,7 @@
 @import "./components/pagination.scss";
 @import "./components/pokemon.scss";
 @import "./components/product.scss";
+@import "./components/star-rating.scss";
 @import "./components/table.scss";
 @import "./components/tags.scss";
 @import "./components/to-do.scss";
@@ -33,5 +34,5 @@
 @import "./components/validation.scss";
 @import "./components/mlinar.scss";
 
-//bootstrap (zakomentirat nakon što prestanemo radit s boostrapom)
-@import "node_modules/bootstrap/scss/bootstrap";
+//bootstrap
+// @import "node_modules/bootstrap/scss/bootstrap";
