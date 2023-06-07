@@ -2,10 +2,26 @@
   "instagram": [
     {
       "id": 1,
-      "title": "Ovo je moja prva objava.",
-      "description": "Ovo je opis moje prve objave.",
-      "hashtags": ["first", "react", "algebra", "LudoSeZabavljam"],
+      "title": "Zabava u Algebri",
+      "description": "Bilo je baš ludo!",
+      "hashtags": [
+        "first",
+        "react",
+        "algebra",
+        "LudoSeZabavljam"
+      ],
       "img_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+    },
+    {
+      "id": 2,
+      "title": "Na poslu",
+      "description": "Novi radni dan u uredu.",
+      "hashtags": [
+        "programiranje",
+        "it",
+        "grind"
+      ],
+      "img_url": "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80"
     }
   ]
 }

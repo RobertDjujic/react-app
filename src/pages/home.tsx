@@ -6,9 +6,6 @@ const Home = () => {
         <h2>Vježbe</h2>
         <ul>
           <li>
-            <a href="/bootstrap">Bootstrap</a>
-          </li>
-          <li>
             <a href="/breweries">Breweries</a>
           </li>
           <li>
@@ -16,6 +13,9 @@ const Home = () => {
           </li>
           <li>
             <a href="/genres">Genres</a>
+          </li>
+          <li>
+            <a href="/instagram">Instagram</a>
           </li>
           <li>
             <a href="/petlje">Petlje</a>
@@ -38,9 +38,6 @@ const Home = () => {
           </li>
           <li>
             <a href="/vjezba-1505">Vježba 1505</a>
-          </li>
-          <li>
-            <a href="/instagram">Instagram</a>
           </li>
         </ul>
       </div>

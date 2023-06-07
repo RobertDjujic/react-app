@@ -4,18 +4,13 @@
 
 //components
 @import "./components/banner.scss";
-@import "./components/bootstrap.scss";
 @import "./components/box.scss";
 @import "./components/button.scss";
 @import "./components/checkbox.scss";
 @import "./components/card.scss";
-@import "./components/chat.scss";
 @import "./components/container.scss";
 @import "./components/dropdown.scss";
-@import "./components/flex-exe.scss";
 @import "./components/footer.scss";
-@import "./components/genres-game.scss";
-@import "./components/genres.scss";
 @import "./components/header.scss";
 @import "./components/hero.scss";
 @import "./components/input.scss";
@@ -24,15 +19,23 @@
 @import "./components/modal.scss";
 @import "./components/navigation.scss";
 @import "./components/pagination.scss";
-@import "./components/pokemon.scss";
 @import "./components/product.scss";
 @import "./components/star-rating.scss";
 @import "./components/table.scss";
 @import "./components/tags.scss";
-@import "./components/to-do.scss";
 @import "./components/toggle.scss";
 @import "./components/validation.scss";
-@import "./components/mlinar.scss";
+
+//pages
+@import "./pages/bootstrap.scss";
+@import "./pages/chat.scss";
+@import "./pages/flex-exe.scss";
+@import "./pages/genres-game.scss";
+@import "./pages/genres.scss";
+@import "./pages/instagram.scss";
+@import "./pages/mlinar.scss";
+@import "./pages/pokemon.scss";
+@import "./pages/to-do.scss";
 
 //bootstrap
 // @import "node_modules/bootstrap/scss/bootstrap";
