@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
 import { PostType } from "./types";
+import { useEffect, useState } from "react";
+import Bookmark from "../../assets/bookmark";
+import ChatBubble from "../../assets/chat-bubble";
+import Ellipsis from "../../assets/ellipsis";
+import Heart from "../../assets/heart";
+import PaperPlane from "../../assets/paper-airplane";
+import profilePic from "./../../assets/profile-picture.jpg";
 
 const dataHeaders = {
   "Content-Type": "application/json",
@@ -52,30 +58,61 @@ const Instagram = () => {
   }, []);
 
   return (
-    <div className="container container--sm">
-      <h1>Instagram</h1>
-      <hr />
-      {posts.map((post: PostType) => {
-        return (
-          <div className="instagram" key={post.id}>
-            <h2 className="instagram__title">{post.title}</h2>
-            <img
-              className="instagram__img"
-              src={post.img_url}
-              alt="A user's posted image."
-            />
-            {post.description}{" "}
-            <b>
-              {post.hashtags.map((tag, index) => {
-                return <span key={index}>{`#${tag} `}</span>;
-              })}
-            </b>
-          </div>
-        );
-      })}
-      <button className="button" onClick={() => createPost(newPost)}>
-        Nova objava
-      </button>
+    <div className="container--sm__wrap">
+      <div className="container container--sm">
+        {posts.map((post: PostType) => {
+          return (
+            <div className="instagram" key={post.id}>
+              <header className="instagram__header">
+                <div className="instagram__header__user">
+                  <div className="instagram__header__user__img">
+                    <img src={profilePic} alt="The user's profile image." />
+                  </div>
+                  <div className="instagram__header__user__info">
+                    <span>Robert</span>
+                    <span>Osijek</span>
+                  </div>
+                </div>
+                <div className="instagram__header__ellipsis">
+                  <Ellipsis />
+                </div>
+              </header>
+              <img
+                className="instagram__img"
+                src={post.img_url}
+                alt="A user's posted image."
+              />
+              <div className="instagram__buttons">
+                <div className="instagram__buttons__sec">
+                  <Heart />
+                  <ChatBubble />
+                  <PaperPlane />
+                </div>
+                <Bookmark />
+              </div>
+              <div className="instagram__views">10.328 views</div>
+              <div className="instagram__desc">
+                <span className="instagram__desc__name">Robert</span>{" "}
+                <span className="instagram__desc__text">
+                  {post.description}
+                </span>{" "}
+                {post.hashtags.map((tag, index) => {
+                  return (
+                    <span
+                      className="instagram__desc__hashtag"
+                      key={index}
+                    >{`#${tag} `}</span>
+                  );
+                })}
+              </div>
+              <div className="instagram__date">5 days ago</div>
+            </div>
+          );
+        })}
+        <button className="button" onClick={() => createPost(newPost)}>
+          Nova objava
+        </button>
+      </div>
     </div>
   );
 };
