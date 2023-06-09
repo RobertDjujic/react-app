@@ -20,9 +20,9 @@ import Region from "./pages/region";
 import Vjezba1505 from "./pages/vjezba-1505";
 import TodoList from "./pages/to-do-list";
 import JsIspit from "./pages/js-ispit";
-import Genres from "./pages/genres";
+import Genres from "./pages/genres/genres";
 import Bootstrap from "./pages/bootstrap";
-import GenresGame from "./pages/genres-game";
+import GenresGame from "./pages/genres-game/genres-game";
 import Instagram from "./pages/instagram/instagram";
 
 const App = () => {

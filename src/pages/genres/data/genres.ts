@@ -1,4 +1,4 @@
-import { GenreType } from "../pages/genres";
+import { GenreType } from "./types";
 
 export const genres: GenreType[] = [
   {

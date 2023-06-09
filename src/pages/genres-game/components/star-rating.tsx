@@ -1,13 +1,13 @@
+import { StarRatingProps } from "../../genres/data/types";
 import React, { useState } from "react";
 
-type StarRatingProps = {
-  maxStars: number;
-  onChange: (rating: number) => void;
-};
-
-const StarRating: React.FC<StarRatingProps> = ({ maxStars, onChange }) => {
-  const [selectedStars, setSelectedStars] = useState<number>(0);
-  const [hoveredStar, setHoveredStar] = useState<number>(0);
+const StarRating: React.FC<StarRatingProps> = ({
+  maxStars,
+  onChange,
+  selectedStars,
+  setSelectedStars,
+}) => {
+  const [hoveredStars, setHoveredStars] = useState<number>(0);
 
   const handleStarClick = (starIndex: number) => {
     const rating = starIndex + 1;
@@ -16,11 +16,11 @@ const StarRating: React.FC<StarRatingProps> = ({ maxStars, onChange }) => {
   };
 
   const handleStarHover = (starIndex: number) => {
-    setHoveredStar(starIndex + 1);
+    setHoveredStars(starIndex + 1);
   };
 
   const handleStarHoverEnd = () => {
-    setHoveredStar(0);
+    setHoveredStars(0);
   };
 
   return (
@@ -28,7 +28,7 @@ const StarRating: React.FC<StarRatingProps> = ({ maxStars, onChange }) => {
       {[...Array(maxStars)].map((_, index) => {
         const starNumber = index + 1;
         const isActive =
-          starNumber <= selectedStars || starNumber <= hoveredStar;
+          starNumber <= selectedStars || starNumber <= hoveredStars;
         return (
           <span
             key={index}
