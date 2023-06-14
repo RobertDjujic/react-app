@@ -44,6 +44,8 @@
   }
 
   &--sm {
+    display: flex;
+    flex-direction: column-reverse;
     max-width: 32rem;
     position: relative;
 

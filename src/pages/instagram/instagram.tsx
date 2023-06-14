@@ -64,14 +64,16 @@ const Instagram = () => {
 
   return (
     <div className="container--sm__wrap">
+      <div className="container container--sm">
+        <div>
+          <button className="button" onClick={() => setModal(true)}>
+            Nova objava
+          </button>
+        </div>
+        <Post posts={posts} />
+      </div>
       <div className={modal ? "overlay--instagram" : ""}></div>
       <Modal handlePost={handlePost} modal={modal} setModal={setModal} />
-      <div className="container container--sm">
-        <Post posts={posts} />
-        <button className="button" onClick={() => setModal(true)}>
-          Nova objava
-        </button>
-      </div>
     </div>
   );
 };
