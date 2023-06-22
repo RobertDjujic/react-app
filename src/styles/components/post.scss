@@ -55,13 +55,13 @@
     svg {
       cursor: pointer;
       margin-right: 0.5rem;
-      transition: all 250ms ease;
 
       &:last-child {
         margin-right: 0rem;
       }
 
       &:hover {
+        color: $purple;
         fill: $pastelPurple;
       }
     }
